@@ -22,7 +22,7 @@ parser.add_argument('-n', '--number-projects', type=int, default=10,
 parser.add_argument('-pid', '--project-id', type=str,
     help='Fetches key documents for a single project')
 parser.add_argument('-d', '--documents', action='store_true', help='Fetch key project documents')
-parser.add_argument('-md', '--metadata', action='store_true',
+parser.add_argument('-m', '--metadata', action='store_true',
     help='Fetches project metadata and adds details to the aggregated.json file')
 parser.add_argument('-hl', '--headless', action='store_true', help='Run in headless mode')
 args = parser.parse_args()
@@ -104,9 +104,9 @@ def get_project_metadata(project_id):
         driver.get(document['document_url'])
 
         doc_detail_rows = []
-        for tr in driver.find_elements_by_xpath('//ul'):
-            tds = tr.find_elements_by_tag_name('li')
-            doc_detail_rows.append([td.text for td in tds if '\n' in td.text])
+        for ul in driver.find_elements_by_xpath('//ul'):
+            list_items = ul.find_elements_by_tag_name('li')
+            doc_detail_rows.append([li.text for li in list_items if '\n' in li.text])
         print('Got doc details: ', doc_detail_rows)
         
 
