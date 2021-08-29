@@ -1,5 +1,6 @@
 import os
 import json
+import requests
 from argparse import ArgumentParser
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -27,9 +28,10 @@ parser.add_argument('-m', '--metadata', action='store_true',
 parser.add_argument('-hl', '--headless', action='store_true', help='Run in headless mode')
 args = parser.parse_args()
 
+projects_data = open('aggregated.json', 'r')
+projects = json.loads(projects_data.read())
+
 if (args.project_id == None):
-    projects_data = open('aggregated.json', 'r')
-    projects = json.loads(projects_data.read())
     project_ids = list(projects.keys())
 else:
     project_ids = [args.project_id]
@@ -100,15 +102,30 @@ def get_project_metadata(project_id):
     
     print('Document details: ', document_details)
 
-    for document in document_details:
-        driver.get(document['document_url'])
-
-        doc_detail_rows = []
-        for ul in driver.find_elements_by_xpath('//ul'):
-            list_items = ul.find_elements_by_tag_name('li')
-            doc_detail_rows.append([li.text for li in list_items if '\n' in li.text])
-        print('Got doc details: ', doc_detail_rows)
+    ## optional. fetches details such as document author, volume, total volumes,
+    ## disclosure status, and disclosure date.
+    # for document in document_details:
+    #     driver.get(document['document_url'])
+    #     doc_detail_rows = []
+    #     for ul in driver.find_elements_by_xpath('//ul'):
+    #         list_items = ul.find_elements_by_tag_name('li')
+    #         doc_detail_rows.append([li.text for li in list_items if '\n' in li.text])
+    #     print('Got doc details: ', doc_detail_rows)
         
+
+# Fetches api data and merges it with the xls-derived data in aggregated.json
+def fetch_api_data():
+    api_data = requests.get(
+        f'http://search.worldbank.org/api/v2/projects?format=json&source=IBRD&rows={len(projects.keys())}'
+    ).json()
+    api_projects = api_data['projects']
+    for project_id in api_projects.keys():                                                                             
+        xls_project = projects[project_id]                                                                      
+        api_project = api_projects[project_id]                                                                  
+        for key in api_project.keys():                                                                          
+            if key not in xls_project.keys():                                                                   
+                xls_project[key] = api_project[key] 
+
 
 if __name__ == '__main__':
     # todo: create path for project id + document type
