@@ -70,8 +70,9 @@ def get_project_documents(project_id):
         document_file_links = [link for link in link_urls if link and (link.endswith('.txt') or link.endswith('.pdf'))]
 
         for file_link in document_file_links:
-            # todo: check if doc already exists
-            os.system(f"wget {file_link} -O './documents/{project_id}_{os.path.basename(file_link)}'")
+            filename = f'{project_id}_{os.path.basename(file_link)}'
+            if not os.path.exists(f'./documents/{filename}'):
+                os.system(f"wget {file_link} -O './documents/{filename}'")
 
 
 def get_project_metadata(project_id):
@@ -112,6 +113,9 @@ def get_project_metadata(project_id):
     #         doc_detail_rows.append([li.text for li in list_items if '\n' in li.text])
     #     print('Got doc details: ', doc_detail_rows)
         
+    # for each document, read xt ocr
+    # find and extract staff informations
+    # append to documen_details (rename to project_details)
 
 # Fetches api data and merges it with the xls-derived data in aggregated.json
 def fetch_api_data():
