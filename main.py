@@ -143,14 +143,12 @@ def get_project_metadata(project_id):
         'report_number': row[2],
         'document_type': row[3],
         'document_url': driver.find_element_by_link_text(row[0]).get_attribute('href')
-    }) for row in table_rows if len(row) == 4]
-    
+    }) for row in table_rows if len(row) == 4]   
     print(f'Document details for project {project_id}: ', document_details)
 
     projects[project_id]['project_documents'] = document_details
 
     with open('aggregated.json', 'w') as f:
-        print('Saving project metadata: ', projects[project_id])
         f.write(json.dumps(projects))
 
 
