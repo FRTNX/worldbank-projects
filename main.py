@@ -17,19 +17,24 @@ document_search_terms = [
     'Memorandum & Recommendation of the President'
 ]
 
-parser = ArgumentParser(description='Fetch project data and documents from the World Bank.')
+parser = ArgumentParser(description='Fetch project data and documents from the World Bank')
 parser.add_argument('-n', '--number-projects', type=int, default=10,
-    help='The number of projects to fetch documents for. Test default is 10.')
+    help='the number of projects to fetch documents for. Test default is 10')
+parser.add_argument('-a', '--all-projects', action='store_true',
+     help='fetches all project data and/or documents')
 parser.add_argument('-pid', '--project-id', type=str,
-    help='Fetches key documents for a single project')
-parser.add_argument('-d', '--documents', action='store_true', help='Fetch key project documents')
+    help='fetches key documents for a single project')
+parser.add_argument('-d', '--documents', action='store_true', help='fetch key project documents')
 parser.add_argument('-m', '--metadata', action='store_true',
-    help='Fetches project metadata and adds details to the aggregated.json file')
-parser.add_argument('-hl', '--headless', action='store_true', help='Run in headless mode')
+    help='fetches project metadata and adds details to the aggregated.json file')
+parser.add_argument('-dt', '--document-type', help='Fetch specific document-type, including non-default types.')
+parser.add_argument('-hl', '--headless', default=False,
+    help='run the script in headless mode, does not require chrome to be running')
 args = parser.parse_args()
 
-projects_data = open('aggregated.json', 'r')
-projects = json.loads(projects_data.read())
+projects = {}
+with open('aggregated.json', 'r') as f:
+    projects = json.loads(f.read())
 
 if (args.project_id == None):
     project_ids = list(projects.keys())
@@ -39,6 +44,9 @@ else:
 options = Options()
 if (args.headless):
     options.headless = True
+
+if args.document_type:
+    args.documents = True
 
 driver = webdriver.Chrome(chrome_options=options)
 
@@ -52,15 +60,14 @@ def get_project_documents(project_id):
     for tr in driver.find_elements_by_xpath('//tr'):
         tds = tr.find_elements_by_tag_name('td')
         table_rows.append([td.text for td in tds])
-    print('Got document rows: ', table_rows)
 
     target_rows = []
     for row in table_rows:
-        [target_rows.append(row) for data in row if data in document_search_terms]
-    print('Target rows: ', target_rows)
+        document_types = [args.document_type] if args.document_type else document_search_terms
+        [target_rows.append(row) for data in row if data in document_types]
 
     document_page_links = [driver.find_element_by_link_text(data[0]).get_attribute('href') for data in target_rows]
-    print('Got doc links: ', document_page_links)
+    print('Got document page links: ', document_page_links)
 
     for document_page in document_page_links:
         driver.get(document_page)
@@ -68,15 +75,52 @@ def get_project_documents(project_id):
         links = driver.find_elements_by_tag_name('a')
         link_urls = [link.get_attribute('href') for link in links]
         document_file_links = [link for link in link_urls if link and (link.endswith('.txt') or link.endswith('.pdf'))]
+        print('Found documents: ', document_file_links)
 
         for file_link in document_file_links:
             filename = f'{project_id}_{os.path.basename(file_link)}'
+            os.system('mkdir documents') if not os.path.exists('./documents') else None
             if not os.path.exists(f'./documents/{filename}'):
                 os.system(f"wget {file_link} -O './documents/{filename}'")
+            else:
+                print('Document already exists: ', filename)
 
 
 def get_project_metadata(project_id):
     print('Extracting metadata for project: ', project_id)
+    
+    project_details_url = f'https://projects.worldbank.org/en/projects-operations/project-detail/{project_id}'
+    driver.get(project_details_url)
+
+    table_rows = []
+    for tr in driver.find_elements_by_xpath('//tr'):
+        tds = tr.find_elements_by_tag_name('td')
+        row_object = {}
+        for td in tds:
+            data_key = td.get_attribute('data-th')
+            if len(data_key) > 0 and data_key.endswith(':'):
+                row_object = { **row_object, data_key[:len(data_key)-1]: td.text }
+        if len(row_object.keys()) > 0:
+            table_rows.append(row_object)
+
+    key_mapping = [
+        { 'FinancingPlan': ['Financier', 'Commitments']},
+        { 'TotalProjectFinancingTableOne': ['IBRD/IDA', 'Product Line' ]},
+        { 'TotalProjectFinancingTableTwo': ['Investment Project Financing', 'Lending Instrument']},
+        { 'SummaryStatusOfWBFinancing': ['Financier', 'Approval Date', 'Closing Date', 'Principal', 'Disbursed', 'Repayments', 'Interest, Charges & Fees']},
+        { 'DetailedFinancialActivity': ['Period', 'Financier', 'Transaction Type', 'Amount (US$)']}
+    ]
+
+    project_details = {
+        'FinancingPlan': [],
+        'TotalProjectFinancingTableOne': [],
+        'TotalProjectFinancingTableTwo': [],
+        'SummaryStatusOfWBFinancing': [],
+        'DetailedFinancialActivity': []
+    }
+
+    # append details accordingly
+
     document_detail_url = f'https://projects.worldbank.org/en/projects-operations/document-detail/{project_id}'
     driver.get(document_detail_url)
 
@@ -90,7 +134,6 @@ def get_project_metadata(project_id):
     for tr in driver.find_elements_by_xpath('//tr'):
         tds = tr.find_elements_by_tag_name('td')
         table_rows.append([td.text for td in tds])
-    print('Got table rows: ', table_rows)
 
     document_details = []
     [document_details.append({
@@ -101,21 +144,25 @@ def get_project_metadata(project_id):
         'document_url': driver.find_element_by_link_text(row[0]).get_attribute('href')
     }) for row in table_rows if len(row) == 4]
     
-    print('Document details: ', document_details)
+    print(f'Available documents for project {project_id}: ', document_details)
 
-    ## optional. fetches details such as document author, volume, total volumes,
-    ## disclosure status, and disclosure date.
-    # for document in document_details:
-    #     driver.get(document['document_url'])
-    #     doc_detail_rows = []
-    #     for ul in driver.find_elements_by_xpath('//ul'):
-    #         list_items = ul.find_elements_by_tag_name('li')
-    #         doc_detail_rows.append([li.text for li in list_items if '\n' in li.text])
-    #     print('Got doc details: ', doc_detail_rows)
-        
-    # for each document, read xt ocr
-    # find and extract staff informations
-    # append to documen_details (rename to project_details)
+    projects[project_id]['project_documents'] = document_details
+
+    with open('aggregated.json', 'w') as f:
+        print('Saving project metadata: ', projects[project_id])
+        f.write(json.dumps(projects))
+
+    # optional. fetches details such as document author, volume, total volumes,
+    # disclosure status, and disclosure date.
+    for document in document_details:
+        driver.get(document['document_url'])
+        doc_detail_rows = []
+        for ul in driver.find_elements_by_xpath('//ul'):
+            list_items = ul.find_elements_by_tag_name('li')
+            doc_detail_rows.append([li.text for li in list_items if '\n' in li.text])
+        print('Got doc details: ', doc_detail_rows)
+    
+
 
 # Fetches api data and merges it with the xls-derived data in aggregated.json
 def fetch_api_data():
@@ -132,16 +179,23 @@ def fetch_api_data():
 
 
 if __name__ == '__main__':
-    # todo: create path for project id + document type
+    number_projects = len(projects.keys()) if args.all_projects else args.number_projects
+    print(f'Running extraction script on {1 if args.project_id else number_projects} project(s)')
+
+    if args.all_projects and not args.documents and not args.metadata:
+        [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
+        [get_project_metadata(project_ids[i]) for i in range(0, number_projects)]
+
     if args.metadata and args.project_id:
         get_project_metadata(args.project_id)
 
     if args.metadata and args.project_id == None:
-        [get_project_metadata(project_ids[i]) for i in range(0, args.number_projects)]
+        [get_project_metadata(project_ids[i]) for i in range(0, number_projects)]
 
     if args.documents and args.project_id:
         get_project_documents(args.project_id)
 
     if args.documents and args.project_id == None:
-        [get_project_documents(project_ids[i]) for i in range(0, args.number_projects)]
+        [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
+    
     
