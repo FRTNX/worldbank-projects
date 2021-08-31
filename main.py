@@ -120,15 +120,16 @@ def get_project_metadata(project_id):
     }
 
     # append details accordingly
+    for row in table_rows:
+        for project_detail in key_mapping:
+            if sorted(list(row.keys())) == sorted(list(project_detail.values())[0]):
+                project_details[(list(project_detail.keys())[0])].append(row)
 
+    print('Found project details: ', project_details)
+    projects[project_id]['addtional_details'] = project_details
+    
     document_detail_url = f'https://projects.worldbank.org/en/projects-operations/document-detail/{project_id}'
     driver.get(document_detail_url)
-
-    ## uncomment in the event of troublsome ajax loading.
-    ## not necessary with current site structure.
-    # WebDriverWait(driver, 10).until(
-    #     EC.presence_of_element_located((By.XPATH, '//tr'))
-    # )
 
     table_rows = []
     for tr in driver.find_elements_by_xpath('//tr'):
@@ -144,24 +145,13 @@ def get_project_metadata(project_id):
         'document_url': driver.find_element_by_link_text(row[0]).get_attribute('href')
     }) for row in table_rows if len(row) == 4]
     
-    print(f'Available documents for project {project_id}: ', document_details)
+    print(f'Document details for project {project_id}: ', document_details)
 
     projects[project_id]['project_documents'] = document_details
 
     with open('aggregated.json', 'w') as f:
         print('Saving project metadata: ', projects[project_id])
         f.write(json.dumps(projects))
-
-    # optional. fetches details such as document author, volume, total volumes,
-    # disclosure status, and disclosure date.
-    for document in document_details:
-        driver.get(document['document_url'])
-        doc_detail_rows = []
-        for ul in driver.find_elements_by_xpath('//ul'):
-            list_items = ul.find_elements_by_tag_name('li')
-            doc_detail_rows.append([li.text for li in list_items if '\n' in li.text])
-        print('Got doc details: ', doc_detail_rows)
-    
 
 
 # Fetches api data and merges it with the xls-derived data in aggregated.json
