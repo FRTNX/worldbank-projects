@@ -1,7 +1,7 @@
 # worldbank-projects
 Tools for extracting project information and documents from the World Bank
 
-![](image1.gif)
+![](image.gif)
 
 ## Extracting Project Documents
 ### Fetching Standard Documents
