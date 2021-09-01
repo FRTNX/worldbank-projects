@@ -27,8 +27,10 @@ parser.add_argument('-pid', '--project-id', type=str,
 parser.add_argument('-d', '--documents', action='store_true', help='fetch key project documents')
 parser.add_argument('-m', '--metadata', action='store_true',
     help='fetches project metadata and adds details to the aggregated.json file')
+parser.add_argument('-s', '--staff-info', action='store_true', 
+    help='Fetch staff information for related project(s')
 parser.add_argument('-dt', '--document-type', help='Fetch specific document-type, including non-default types.')
-parser.add_argument('-hl', '--headless', default=False,
+parser.add_argument('-hl', '--headless', default=True,
     help='run the script in headless mode, does not require chrome to be running')
 args = parser.parse_args()
 
@@ -87,7 +89,7 @@ def get_project_documents(project_id):
 
 
 def get_project_metadata(project_id):
-    print('Extracting metadata for project: ', project_id)
+    print('Extracting metadata for project ', project_id)
     
     project_details_url = f'https://projects.worldbank.org/en/projects-operations/project-detail/{project_id}'
     driver.get(project_details_url)
@@ -151,6 +153,27 @@ def get_project_metadata(project_id):
     with open('aggregated.json', 'w') as f:
         f.write(json.dumps(projects))
 
+# Extracts staff information from downloaded document txt files.
+# This function assumes that the project documents have already been extracted.
+# This is achievable by adding the -d flag to any command that extract staff information
+def extract_staff_information(project_id):
+    print('Extracting staff information for project ', project_id)
+    search_terms = ['Vice President:', 'Country Director:', 'Sector Manager:', 'Task Team Leader:']
+    staff_information = {}
+    for filename in [x for x in os.listdir('./documents') if x.startswith(project_id) and x.endswith('.txt')]:
+        with open(f'./documents/{filename}', 'r', encoding='latin1') as f:
+            for line in f.readlines():
+                for search_term in search_terms:
+                    if search_term in line:
+                        key, value = ' '.join(line.split()).split(':')
+                        staff_information[key] = value
+
+    print(f'Found staff information for project {project_id}: ', staff_information)
+    projects[project_id]['staff_information'] = staff_information
+    with open('aggregated.json', 'w') as f:
+        f.write(json.dumps(projects))
+
+
 
 # Fetches api data and merges it with the xls-derived data in aggregated.json
 def fetch_api_data():
@@ -185,5 +208,11 @@ if __name__ == '__main__':
 
     if args.documents and args.project_id == None:
         [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
+
+    if args.staff_info and args.project_id:
+        extract_staff_information(args.project_id)
+
+    if args.staff_info and not args.project_id:
+        [extract_staff_information(project_ids[i]) for i in range(0, number_projects)]
     
     
