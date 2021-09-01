@@ -33,6 +33,8 @@ parser.add_argument('-s', '--staff-information', action='store_true',
 parser.add_argument('-dt', '--document-type', help='Fetch specific document-type, including non-default types.')
 parser.add_argument('-hl', '--headless', default=True,
     help='run the script in headless mode, does not require Chrome to be running')
+parser.add_argument('-agg', '--aggregate', action='store_true',
+    help='fetch project data from the World Bank API and add missing details to corresponding projects in aggregated.json')
 args = parser.parse_args()
 
 projects = {}
@@ -177,9 +179,10 @@ def extract_staff_information(project_id):
 
 
 # Fetches api data and merges it with the xls-derived data in aggregated.json
-def fetch_api_data():
+def fetch_api_data(number_projects):
+    print(f'Fetching {number_projects} from API')
     api_data = requests.get(
-        f'http://search.worldbank.org/api/v2/projects?format=json&source=IBRD&rows={len(projects.keys())}'
+        f'http://search.worldbank.org/api/v2/projects?format=json&source=IBRD&rows={number_projects}'
     ).json()
     api_projects = api_data['projects']
     for project_id in api_projects.keys():                                                                             
@@ -216,4 +219,5 @@ if __name__ == '__main__':
     if args.staff_information and not args.project_id:
         [extract_staff_information(project_ids[i]) for i in range(0, number_projects)]
     
-    
+    if args.aggregate:
+        fetch_api_data(number_projects)
