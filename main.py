@@ -24,14 +24,15 @@ parser.add_argument('-a', '--all-projects', action='store_true',
      help='fetches all project data and/or documents')
 parser.add_argument('-pid', '--project-id', type=str,
     help='fetches key documents for a single project')
-parser.add_argument('-d', '--documents', action='store_true', help='fetch key project documents')
+parser.add_argument('-d', '--documents', action='store_true',
+    help='fetches documents and/or metadata for a single document')
 parser.add_argument('-m', '--metadata', action='store_true',
     help='fetches project metadata and adds details to the aggregated.json file')
-parser.add_argument('-s', '--staff-info', action='store_true', 
-    help='Fetch staff information for related project(s')
+parser.add_argument('-s', '--staff-information', action='store_true', 
+    help='fetches staff information for related project(s)')
 parser.add_argument('-dt', '--document-type', help='Fetch specific document-type, including non-default types.')
 parser.add_argument('-hl', '--headless', default=True,
-    help='run the script in headless mode, does not require chrome to be running')
+    help='run the script in headless mode, does not require Chrome to be running')
 args = parser.parse_args()
 
 projects = {}
@@ -153,9 +154,10 @@ def get_project_metadata(project_id):
     with open('aggregated.json', 'w') as f:
         f.write(json.dumps(projects))
 
+
 # Extracts staff information from downloaded document txt files.
 # This function assumes that the project documents have already been extracted.
-# This is achievable by adding the -d flag to any command that extract staff information
+# if not, this is achievable by adding the -d flag to any command that extracts staff information
 def extract_staff_information(project_id):
     print('Extracting staff information for project ', project_id)
     search_terms = ['Vice President:', 'Country Director:', 'Sector Manager:', 'Task Team Leader:']
@@ -172,7 +174,6 @@ def extract_staff_information(project_id):
     projects[project_id]['staff_information'] = staff_information
     with open('aggregated.json', 'w') as f:
         f.write(json.dumps(projects))
-
 
 
 # Fetches api data and merges it with the xls-derived data in aggregated.json
@@ -209,10 +210,10 @@ if __name__ == '__main__':
     if args.documents and args.project_id == None:
         [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
 
-    if args.staff_info and args.project_id:
+    if args.staff_information and args.project_id:
         extract_staff_information(args.project_id)
 
-    if args.staff_info and not args.project_id:
+    if args.staff_information and not args.project_id:
         [extract_staff_information(project_ids[i]) for i in range(0, number_projects)]
     
     
