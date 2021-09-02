@@ -1,5 +1,6 @@
 import os
 import json
+import xlrd
 import requests
 from argparse import ArgumentParser
 from selenium import webdriver
@@ -35,7 +36,40 @@ parser.add_argument('-hl', '--headless', default=True,
     help='run the script in headless mode, does not require Chrome to be running')
 parser.add_argument('-agg', '--aggregate', action='store_true',
     help='fetch project data from the World Bank API and add missing details to corresponding projects in aggregated.json')
+parser.add_argument('-x', '--xls-to-json', action='store_true', help='Convert a World Bank xls data dump to a json file used for \
+    future aggregations. Run in cases where aggregated.json does not exist or is corrupted.')
+parser.add_argument('-f', '--filepath', help='Defines a filepath for arguments that accept custom files \
+    for example, python main.py --xls-to-json -f "./path_to_custom.xls"')
 args = parser.parse_args()
+
+
+def transform_xls_to_json():
+    filepath = args.filepath if args.filepath else './World_Bank_Projects_downloaded_8_17_2021.xls'
+    print(f'Transforming {filepath} to json')
+    workbook = xlrd.open_workbook(filepath) 
+    sheet = workbook.sheet_by_index(0) 
+
+    abbr_keys = []
+    for cell in sheet.row(2):                                                                                      
+        abbr_keys.append(cell.value)
+
+    data = {}
+    for i in range(3, sheet.nrows):                                                                                
+        project_id = sheet.row(i)[0].value;                                                                        
+        print('Tranforming project: ' + project_id)                                                              
+        data[project_id] = {}                                                                                   
+        for index in range(len(sheet.row(i))):                                                                     
+            data[project_id][abbr_keys[index]] = sheet.row(i)[index].value
+            
+    print(f'Transform complete. Processed {len(data.keys())} projects')
+    with open('aggregated.json', 'w') as f:
+        f.write(json.dumps(data))
+
+
+if not os.path.exists('aggregated.json'):
+    print('aggregated.json not found. creating it from default xls file')
+    transform_xls_to_json()
+    args.xls_to_json = False
 
 projects = {}
 with open('aggregated.json', 'r') as f:
@@ -133,8 +167,8 @@ def get_project_metadata(project_id):
     print('Found project details: ', project_details)
     projects[project_id]['addtional_details'] = project_details
     
-    document_detail_url = f'https://projects.worldbank.org/en/projects-operations/document-detail/{project_id}'
-    driver.get(document_detail_url)
+    document_details_url = f'https://projects.worldbank.org/en/projects-operations/document-detail/{project_id}'
+    driver.get(document_details_url)
 
     table_rows = []
     for tr in driver.find_elements_by_xpath('//tr'):
@@ -180,24 +214,35 @@ def extract_staff_information(project_id):
 
 # Fetches api data and merges it with the xls-derived data in aggregated.json
 def fetch_api_data(number_projects):
-    print(f'Fetching {number_projects} from API')
-    api_data = requests.get(
-        f'http://search.worldbank.org/api/v2/projects?format=json&source=IBRD&rows={number_projects}'
-    ).json()
-    api_projects = api_data['projects']
-    for project_id in api_projects.keys():                                                                             
-        xls_project = projects[project_id]                                                                      
-        api_project = api_projects[project_id]                                                                  
-        for key in api_project.keys():                                                                          
-            if key not in xls_project.keys():                                                                   
-                xls_project[key] = api_project[key] 
+    print(f'Fetching api data for {number_projects} project(s)')
+    api_response = requests.get(f'http://search.worldbank.org/api/v2/projects?format=json&source=IBRD&rows={number_projects}')
+    print(f'Fetch project api data returned status code {api_response.status_code}', api_response)
+    if api_response.status_code == 200:
+        try:
+            api_data = api_response.json()
+        except Exception as e:
+            print('Error: ', e)
+            return
+
+        api_projects = api_data['projects']
+        for project_id in api_projects.keys():
+            print('Aggregating data for project: ', project_id)                                                                          
+            project = projects[project_id]                                                                      
+            api_project = api_projects[project_id]                                                                  
+            for key in api_project.keys():                                                                          
+                if key not in project.keys():                                                                   
+                    project[key] = api_project[key]
+
+        with open('aggregated.json', 'w') as f:
+            f.write(json.dumps(projects))
+        print('Data aggregation complete. Saved to aggregated.json')
 
 
 if __name__ == '__main__':
     number_projects = len(projects.keys()) if args.all_projects else args.number_projects
     print(f'Running extraction script on {1 if args.project_id else number_projects} project(s)')
 
-    if args.all_projects and not args.documents and not args.metadata:
+    if args.all_projects and not args.documents and not args.metadata and not args.aggregate:
         [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
         [get_project_metadata(project_ids[i]) for i in range(0, number_projects)]
 
@@ -218,6 +263,7 @@ if __name__ == '__main__':
 
     if args.staff_information and not args.project_id:
         [extract_staff_information(project_ids[i]) for i in range(0, number_projects)]
-    
-    if args.aggregate:
-        fetch_api_data(number_projects)
+
+    if args.xls_to_json: transform_xls_to_json()
+
+    if args.aggregate: fetch_api_data(number_projects)
