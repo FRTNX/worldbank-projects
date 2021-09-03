@@ -36,13 +36,15 @@ parser.add_argument('-hl', '--headless', default=True,
     help='run the script in headless mode, does not require Chrome to be running')
 parser.add_argument('-agg', '--aggregate', action='store_true',
     help='fetch project data from the World Bank API and add missing details to corresponding projects in aggregated.json')
-parser.add_argument('-x', '--xls-to-json', action='store_true', help='Convert a World Bank xls data dump to a json file used for \
+parser.add_argument('-x', '--xls-to-json', action='store_true', help='convert a World Bank xls data dump to a json file used for \
     future aggregations. Run in cases where aggregated.json does not exist or is corrupted.')
 parser.add_argument('-f', '--filepath', help='Defines a filepath for arguments that accept custom files \
     for example, python main.py --xls-to-json -f "./path_to_custom.xls"')
-parser.add_argument('-r', '--reset', action='store_true', help='Resets the extraction status \
+parser.add_argument('-r', '--reset', action='store_true', help='resets the extraction status \
     of either documents, metadata or staff information. e.g., python main.py -r -d resets the \
     log of projects with downloaded documents.')
+parser.add_argument('--stats', action='store_true', help='prints extraction status for documents \
+    metadata, and staff information')
 args = parser.parse_args()
 
 
@@ -97,7 +99,6 @@ if not os.path.exists('extraction_details.json'):
 extraction_details = {}
 with open('extraction_details.json', 'r') as f:
     extraction_details = json.loads(f.read())
-print('Found previous extraction details: ', extraction_details)
 
 driver = webdriver.Chrome(chrome_options=options)
 
@@ -140,6 +141,9 @@ def get_project_documents(project_id):
             else:
                 print('Document already exists: ', filename)
 
+    # document_page_links sometimes returns empty, even where documents exist.
+    # marking it as not extracted to be re-attempted on the next
+    # execution of the script
     if len(document_page_links) > 0:
         extraction_details['documents'].append(project_id)
         with open('extraction_details.json', 'w') as f:
@@ -291,8 +295,17 @@ def reset_extraction_details():
     print('Extraction details successfully (re)set')
 
 
+def extraction_stats():
+    total_projects = len(projects.keys())
+    print(f'Documents: {len(extraction_details["documents"])}/{total_projects}')
+    print(f'Metadata: {len(extraction_details["metadata"])}/{total_projects}')
+    print(f'Staff information: {len(extraction_details["staff_information"])}/{total_projects}')
+
+
 def extraction_handler():
     if args.reset: return reset_extraction_details()
+
+    if args.stats: return extraction_stats()
 
     number_projects = len(projects.keys()) if args.all_projects else args.number_projects
     print(f'Running extraction script on {1 if args.project_id else number_projects} project(s)')
