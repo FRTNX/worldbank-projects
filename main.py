@@ -40,6 +40,9 @@ parser.add_argument('-x', '--xls-to-json', action='store_true', help='Convert a 
     future aggregations. Run in cases where aggregated.json does not exist or is corrupted.')
 parser.add_argument('-f', '--filepath', help='Defines a filepath for arguments that accept custom files \
     for example, python main.py --xls-to-json -f "./path_to_custom.xls"')
+parser.add_argument('-r', '--reset', action='store_true', help='Resets the extraction status \
+    of either documents, metadata or staff information. e.g., python main.py -r -d resets the \
+    log of projects with downloaded documents.')
 args = parser.parse_args()
 
 
@@ -87,10 +90,23 @@ if (args.headless):
 if args.document_type:
     args.documents = True
 
+if not os.path.exists('extraction_details.json'):
+    with open('extraction_details.json', 'w') as f:
+        f.write(json.dumps({ 'documents': [], 'metadata': [], 'staff_information': [] }))
+
+extraction_details = {}
+with open('extraction_details.json', 'r') as f:
+    extraction_details = json.loads(f.read())
+print('Found previous extraction details: ', extraction_details)
+
 driver = webdriver.Chrome(chrome_options=options)
 
 
 def get_project_documents(project_id):
+    if project_id in extraction_details['documents']:
+        print('Project documents already extracted for project: ', project_id)
+        return
+    
     print('Extracting documents for project: ', project_id)
     document_detail_url = f'https://projects.worldbank.org/en/projects-operations/document-detail/{project_id}'
     driver.get(document_detail_url)
@@ -124,8 +140,17 @@ def get_project_documents(project_id):
             else:
                 print('Document already exists: ', filename)
 
+    if len(document_page_links) > 0:
+        extraction_details['documents'].append(project_id)
+        with open('extraction_details.json', 'w') as f:
+            print('Persisting extraction details: ', extraction_details)
+            f.write(json.dumps(extraction_details))
 
 def get_project_metadata(project_id):
+    if project_id in extraction_details['metadata']:
+        print('Project metadata already extracted for project: ', project_id)
+        return
+
     print('Extracting metadata for project ', project_id)
     
     project_details_url = f'https://projects.worldbank.org/en/projects-operations/project-detail/{project_id}'
@@ -190,11 +215,20 @@ def get_project_metadata(project_id):
     with open('aggregated.json', 'w') as f:
         f.write(json.dumps(projects))
 
+    extraction_details['metadata'].append(project_id)
+    with open('extraction_details.json', 'w') as f:
+        print('Persisting extraction details: ', extraction_details)
+        f.write(json.dumps(extraction_details))
+
 
 # Extracts staff information from downloaded document txt files.
 # This function assumes that the project documents have already been extracted.
 # if not, this is achievable by adding the -d flag to any command that extracts staff information
 def extract_staff_information(project_id):
+    if project_id in extraction_details['staff_information']:
+        print('Project staff information already extracted for project: ', project_id)
+        return
+
     print('Extracting staff information for project ', project_id)
     search_terms = ['Vice President:', 'Country Director:', 'Sector Manager:', 'Task Team Leader:']
     staff_information = {}
@@ -210,6 +244,11 @@ def extract_staff_information(project_id):
     projects[project_id]['staff_information'] = staff_information
     with open('aggregated.json', 'w') as f:
         f.write(json.dumps(projects))
+
+    extraction_details['staff_information'].append(project_id)
+    with open('extraction_details.json', 'w') as f:
+        print('Persisting extraction details: ', extraction_details)
+        f.write(json.dumps(extraction_details))
 
 
 # Fetches api data and merges it with the xls-derived data in aggregated.json
@@ -237,26 +276,43 @@ def fetch_api_data(number_projects):
             f.write(json.dumps(projects))
         print('Data aggregation complete. Saved to aggregated.json')
 
+    
+def reset_extraction_details():
+    if args.documents:
+        extraction_details['documents'] = []
+    if args.metadata:
+        extraction_details['metadata'] = []
+    if args.staff_information:
+        extraction_details['staff_information'] = []
 
-if __name__ == '__main__':
+    with open('extraction_details.json', 'w') as f:
+        f.write(json.dumps(extraction_details))
+    print('Extraction details successfully (re)set')
+
+
+def extraction_handler():
+    if args.reset: return reset_extraction_details()
+
     number_projects = len(projects.keys()) if args.all_projects else args.number_projects
     print(f'Running extraction script on {1 if args.project_id else number_projects} project(s)')
 
-    if args.all_projects and not args.documents and not args.metadata and not args.aggregate:
+    if args.all_projects and not args.documents and not args.metadata \
+        and not args.aggregate and not args.reset:
         [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
         [get_project_metadata(project_ids[i]) for i in range(0, number_projects)]
-
-    if args.metadata and args.project_id:
-        get_project_metadata(args.project_id)
-
-    if args.metadata and args.project_id == None:
-        [get_project_metadata(project_ids[i]) for i in range(0, number_projects)]
+        [extract_staff_information(project_ids[i]) for i in range(0, number_projects)]
 
     if args.documents and args.project_id:
         get_project_documents(args.project_id)
 
     if args.documents and args.project_id == None:
         [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
+
+    if args.metadata and args.project_id:
+        get_project_metadata(args.project_id)
+
+    if args.metadata and args.project_id == None:
+        [get_project_metadata(project_ids[i]) for i in range(0, number_projects)]
 
     if args.staff_information and args.project_id:
         extract_staff_information(args.project_id)
@@ -267,3 +323,8 @@ if __name__ == '__main__':
     if args.xls_to_json: transform_xls_to_json()
 
     if args.aggregate: fetch_api_data(number_projects)
+
+
+if __name__ == '__main__':
+    # encapsulated for the benefit of using return statements
+    extraction_handler()
