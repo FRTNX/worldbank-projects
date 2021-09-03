@@ -146,6 +146,7 @@ def get_project_documents(project_id):
             print('Persisting extraction details: ', extraction_details)
             f.write(json.dumps(extraction_details))
 
+
 def get_project_metadata(project_id):
     if project_id in extraction_details['metadata']:
         print('Project metadata already extracted for project: ', project_id)
