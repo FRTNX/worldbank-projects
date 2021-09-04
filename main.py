@@ -32,8 +32,9 @@ parser.add_argument('-m', '--metadata', action='store_true',
 parser.add_argument('-s', '--staff-information', action='store_true', 
     help='fetches staff information for related project(s)')
 parser.add_argument('-dt', '--document-type', help='Fetch specific document-type, including non-default types.')
-parser.add_argument('-hl', '--headless', default=True,
-    help='run the script in headless mode, does not require Chrome to be running')
+parser.add_argument('-hl', '--headless', default=True, help='run the script in headless \
+    mode, does not require Chrome to be running. Default is True. Set to False to track \
+    script execution from the browser')
 parser.add_argument('-agg', '--aggregate', action='store_true',
     help='fetch project data from the World Bank API and add missing details to corresponding projects in aggregated.json')
 parser.add_argument('-x', '--xls-to-json', action='store_true', help='convert a World Bank xls data dump to a json file used for \
@@ -42,9 +43,11 @@ parser.add_argument('-f', '--filepath', help='Defines a filepath for arguments t
     for example, python main.py --xls-to-json -f "./path_to_custom.xls"')
 parser.add_argument('-r', '--reset', action='store_true', help='resets the extraction status \
     of either documents, metadata or staff information. e.g., python main.py -r -d resets the \
-    log of projects with downloaded documents.')
+    log of projects with downloaded documents. Note that reset targets must be explicitly defined')
 parser.add_argument('--stats', action='store_true', help='prints extraction status for documents \
     metadata, and staff information')
+parser.add_argument('--retro', action='store_true', help='Updates extraction details with pre-existing \
+    documents and/or data.')
 args = parser.parse_args()
 
 
@@ -295,6 +298,20 @@ def reset_extraction_details():
     print('Extraction details successfully (re)set')
 
 
+def retroactively_populate_extraction_details():
+    print('Updating extraction details...')
+    
+    if args.documents:
+        for filename in os.listdir('./documents'):
+            project_id = filename[:filename.find('_')]
+            if project_id not in extraction_details['documents']:
+                extraction_details['documents'].append(project_id)
+        print('Extracted documents details are now up to date')
+
+    with open('extraction_details.json', 'w') as f:
+        f.write(json.dumps(extraction_details))
+
+
 def extraction_stats():
     total_projects = len(projects.keys())
     print(f'Documents: {len(extraction_details["documents"])}/{total_projects}')
@@ -304,6 +321,8 @@ def extraction_stats():
 
 def extraction_handler():
     if args.reset: return reset_extraction_details()
+
+    if args.retro: return retroactively_populate_extraction_details()
 
     if args.stats: return extraction_stats()
 
