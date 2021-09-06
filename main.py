@@ -240,7 +240,13 @@ def extract_staff_information(project_id):
     print('Extracting staff information for project ', project_id)
     search_terms = ['Vice President:', 'Country Director:', 'Sector Manager:', 'Task Team Leader:']
     staff_information = {}
-    for filename in [x for x in os.listdir('./documents') if x.startswith(project_id) and x.endswith('.txt')]:
+    project_text_documents = [x for x in os.listdir('./documents') if x.startswith(project_id) and x.endswith('.txt')]
+
+    if len(project_text_documents) == 0:
+        print(f'Project documents not found for project: {project_id}. Skipping')
+        return
+
+    for filename in project_text_documents:
         with open(f'./documents/{filename}', 'r', encoding='latin1') as f:
             for line in f.readlines():
                 for search_term in search_terms:
