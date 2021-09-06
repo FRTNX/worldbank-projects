@@ -306,10 +306,23 @@ def retroactively_populate_extraction_details():
             project_id = filename[:filename.find('_')]
             if project_id not in extraction_details['documents']:
                 extraction_details['documents'].append(project_id)
-        print('Extracted documents details are now up to date')
+
+    if args.metadata:
+        [
+            extraction_details['metadata'].append(project_id) for project_id in projects.keys() if 'project_documents' in projects[project_id].keys() and \
+                ('additional_details' in projects[project_id].keys() or 'addtional_details' in projects[project_id].keys()) \
+                and project_id not in extraction_details['metadata'] # ^ atonement for an old typo
+        ]
+
+    if args.staff_information:
+        [
+            extraction_details['staff_information'].append(project_id) for project_id in projects.keys() \
+                if 'staff_information' in projects[project_id].keys() and project_id not in extraction_details['staff_information']
+        ]
 
     with open('extraction_details.json', 'w') as f:
         f.write(json.dumps(extraction_details))
+    print('Extraction details successfully updated')
 
 
 def extraction_stats():
