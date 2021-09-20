@@ -61,17 +61,17 @@ def transform_xls_to_json():
     for cell in sheet.row(2):                                                                                      
         abbr_keys.append(cell.value)
 
-    data = {}
+    xls_data = {}
     for i in range(3, sheet.nrows):                                                                                
         project_id = sheet.row(i)[0].value;                                                                        
         print('Tranforming project: ' + project_id)                                                              
-        data[project_id] = {}                                                                                   
+        xls_data[project_id] = {}                                                                                   
         for index in range(len(sheet.row(i))):                                                                     
-            data[project_id][abbr_keys[index]] = sheet.row(i)[index].value
+            xls_data[project_id][abbr_keys[index]] = sheet.row(i)[index].value
             
-    print(f'Transform complete. Processed {len(data.keys())} projects')
+    print(f'Transform complete. Processed {len(xls_data.keys())} projects')
     with open('aggregated.json', 'w') as f:
-        f.write(json.dumps(data))
+        f.write(json.dumps(xls_data))
 
 
 if not os.path.exists('aggregated.json'):
@@ -79,29 +79,36 @@ if not os.path.exists('aggregated.json'):
     transform_xls_to_json()
     args.xls_to_json = False
 
+
 projects = {}
 with open('aggregated.json', 'r') as f:
     projects = json.loads(f.read())
+
 
 if (args.project_id == None):
     project_ids = list(projects.keys())
 else:
     project_ids = [args.project_id]
 
+
 options = Options()
 if (args.headless):
     options.headless = True
 
+
 if args.document_type:
     args.documents = True
+
 
 if not os.path.exists('extraction_details.json'):
     with open('extraction_details.json', 'w') as f:
         f.write(json.dumps({ 'documents': [], 'metadata': [], 'staff_information': [] }))
 
+
 extraction_details = {}
 with open('extraction_details.json', 'r') as f:
     extraction_details = json.loads(f.read())
+
 
 driver = webdriver.Chrome(chrome_options=options)
 
@@ -145,8 +152,7 @@ def get_project_documents(project_id):
                 print('Document already exists: ', filename)
 
     # document_page_links sometimes returns empty, even where documents exist.
-    # marking it as not extracted to be re-attempted on the next
-    # execution of the script
+    # marking it as not extracted to be re-attempted on future extractions
     if len(document_page_links) > 0:
         extraction_details['documents'].append(project_id)
         with open('extraction_details.json', 'w') as f:
@@ -348,8 +354,8 @@ def extraction_handler():
     number_projects = len(projects.keys()) if args.all_projects else args.number_projects
     print(f'Running extraction script on {1 if args.project_id else number_projects} project(s)')
 
-    if args.all_projects and not args.documents and not args.metadata \
-        and not args.aggregate and not args.reset:
+    if args.all_projects and not args.documents and not args.metadata and not args.aggregate and not args.reset \
+        and not args.staff_information:
         [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
         [get_project_metadata(project_ids[i]) for i in range(0, number_projects)]
         [extract_staff_information(project_ids[i]) for i in range(0, number_projects)]
