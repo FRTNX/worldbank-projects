@@ -244,7 +244,7 @@ def extract_staff_information(project_id):
         return
 
     print('Extracting staff information for project ', project_id)
-    search_terms = ['Vice President:', 'Country Director:', 'Sector Manager:', 'Task Team Leader:']
+    search_terms = ['Vice President:', 'Country Director:', 'Sector Manager:', 'Task Team Leader:', 'Name:']
     staff_information = {}
     project_text_documents = [x for x in os.listdir('./documents') if x.startswith(project_id) and x.endswith('.txt')]
 
@@ -257,8 +257,10 @@ def extract_staff_information(project_id):
             for line in f.readlines():
                 for search_term in search_terms:
                     if search_term in line:
-                        key, value = ' '.join(line.split()).split(':')
-                        staff_information[key] = value
+                        line_data = ' '.join(line.split()).split(':')
+                        if len(line_data) == 2: # filters out keys with missing values
+                            key, value = line_data
+                            staff_information[key] = value
 
     print(f'Found staff information for project {project_id}: ', staff_information)
     projects[project_id]['staff_information'] = staff_information
