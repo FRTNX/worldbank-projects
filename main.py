@@ -1,4 +1,5 @@
 import os
+import csv
 import json
 import xlrd
 import requests
@@ -32,7 +33,10 @@ parser.add_argument('-m', '--metadata', action='store_true',
     help='fetches project metadata and adds details to the aggregated.json file')
 parser.add_argument('-s', '--staff-information', action='store_true', 
     help='fetches staff information for related project(s)')
-parser.add_argument('-dt', '--document-type', help='Fetch specific document-type, including non-default types.')
+parser.add_argument('-dt', '--document-types',nargs='+', help='Fetch specific document-types, \
+    including non-default types.')
+parser.add_argument('-tp', '--target-package',nargs='+', help='A csv file specifying specific \
+    projects to fetch (format: project_id,proj_lgl_name)')
 parser.add_argument('-hl', '--headless', default=True, help='run the script in headless \
     mode, does not require Chrome to be running. Default is True. Set to False to track \
     script execution from the browser')
@@ -73,21 +77,42 @@ def transform_xls_to_json():
     print(f'Transform complete. Processed {len(xls_data.keys())} projects')
     with open('aggregated.json', 'w') as f:
         f.write(json.dumps(xls_data))
+        
+        
+def parse_target_package():
+    print('got target package: ', args.target_package)
+    with open(args.target_package[0], mode='r') as file:
+        print('Found target package. Extracting project project ids.')
+        reader = csv.reader(file)
+        count = 0
+        pids = []
+        for row in reader:
+            if count == 0: # skip header row
+                count += 1
+                continue
+            else:
+                pids.append(row[0])
+                # counter no longer necessary
+        print(f'Extraction complete. Found {len(pids)} projects in target package.')
+        return pids
 
 
-if not os.path.exists('aggregated.json'):
+if not os.path.exists('aggregated.json') and not args.target_package:
     print('aggregated.json not found. creating it from default xls file')
     transform_xls_to_json()
     args.xls_to_json = False
 
 
 projects = {}
-with open('aggregated.json', 'r') as f:
-    projects = json.loads(f.read())
+if not args.target_package:
+    with open('aggregated.json', 'r') as f:
+        projects = json.loads(f.read())
 
 
-if (args.project_id == None):
+if (args.project_id == None and not args.target_package):
     project_ids = list(projects.keys())
+elif args.target_package:
+    project_ids = parse_target_package()
 else:
     project_ids = [args.project_id]
 
@@ -97,7 +122,7 @@ if (args.headless):
     options.headless = True
 
 
-if args.document_type:
+if args.document_types:
     args.documents = True
 
 
@@ -112,6 +137,8 @@ with open('extraction_details.json', 'r') as f:
 
 
 driver = webdriver.Chrome(options=options)
+
+
 
 
 def get_project_documents(project_id):
@@ -130,7 +157,8 @@ def get_project_documents(project_id):
 
     target_rows = []
     for row in table_rows:
-        document_types = [args.document_type] if args.document_type else document_search_terms
+        document_types = args.document_types if args.document_types else document_search_terms
+        print('Fetching document types:', document_types)
         [target_rows.append(row) for data in row if data in document_types]
 
     document_page_links = [driver.find_element(By.LINK_TEXT, data[0]).get_attribute('href') for data in target_rows]
@@ -326,7 +354,7 @@ def retroactively_populate_extraction_details():
         [
             extraction_details['metadata'].append(project_id) for project_id in projects.keys() if 'project_documents' in projects[project_id].keys() and \
                 ('additional_details' in projects[project_id].keys() or 'addtional_details' in projects[project_id].keys()) \
-                and project_id not in extraction_details['metadata'] # ^ atonement for an old typo
+                and project_id not in extraction_details['metadata']   # ^ atonement for an old typo
         ]
 
     if args.staff_information:

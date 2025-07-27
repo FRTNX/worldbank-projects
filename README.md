@@ -25,6 +25,16 @@ To fetch documents for all World Bank projects
 python main.py -d -a
 ```
 
+To specify projects to fetch via csv as well as specific documents of interest (assuming your csv file specifies 12064 targets):
+```
+python main.py --target-package pcodes_to_fetch.csv --document-types "Project Appraisal Document" "Project Paper" -n 12064
+```
+
+or in short form:
+```
+python main.py -tp pcodes_to_fetch.csv -dt "Project Appraisal Document" "Project Paper" -n 12064
+```
+
 ### Fetching Other Document Types
 Documents other than project information and appraisals may also be downloaded.
 
