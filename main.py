@@ -141,12 +141,12 @@ driver = webdriver.Chrome(options=options)
 
 
 
-def get_project_documents(project_id):
+def get_project_documents(project_id, index, total):
     if project_id in extraction_details['documents']:
         print('Project documents already extracted for project: ', project_id)
         return
     
-    print('Extracting documents for project: ', project_id)
+    print(f'({index + 1}/{total}) Extracting documents for project: ', project_id)
     document_detail_url = f'https://projects.worldbank.org/en/projects-operations/document-detail/{project_id}'
     driver.get(document_detail_url)
 
@@ -387,15 +387,15 @@ def extraction_handler():
 
     if args.all_projects and not args.documents and not args.metadata and not args.aggregate and not args.reset \
         and not args.staff_information:
-        [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
+        [get_project_documents(project_ids[i], i, number_projects) for i in range(0, number_projects)]
         [get_project_metadata(project_ids[i]) for i in range(0, number_projects)]
         [extract_staff_information(project_ids[i]) for i in range(0, number_projects)]
 
     if args.documents and args.project_id:
-        get_project_documents(args.project_id)
+        get_project_documents(args.project_id, 1, 1)
 
     if args.documents and args.project_id == None:
-        [get_project_documents(project_ids[i]) for i in range(0, number_projects)]
+        [get_project_documents(project_ids[i], i, number_projects) for i in range(0, number_projects)]
 
     if args.metadata and args.project_id:
         get_project_metadata(args.project_id)
