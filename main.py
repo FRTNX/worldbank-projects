@@ -13,6 +13,7 @@ from selenium.common.exceptions import TimeoutException
 document_search_terms = [
     'Project Appraisal Document',
     'Project Information Document',
+    'Project Paper',
     'Project Information and Integrated Safeguards Data Sheet',
     'Staff Appraisal Report',
     'Memorandum & Recommendation of the President'
@@ -110,7 +111,7 @@ with open('extraction_details.json', 'r') as f:
     extraction_details = json.loads(f.read())
 
 
-driver = webdriver.Chrome(chrome_options=options)
+driver = webdriver.Chrome(options=options)
 
 
 def get_project_documents(project_id):
@@ -123,8 +124,8 @@ def get_project_documents(project_id):
     driver.get(document_detail_url)
 
     table_rows = []
-    for tr in driver.find_elements_by_xpath('//tr'):
-        tds = tr.find_elements_by_tag_name('td')
+    for tr in driver.find_elements(By.XPATH, '//tr'):
+        tds = tr.find_elements(By.TAG_NAME, 'td')
         table_rows.append([td.text for td in tds])
 
     target_rows = []
@@ -132,13 +133,13 @@ def get_project_documents(project_id):
         document_types = [args.document_type] if args.document_type else document_search_terms
         [target_rows.append(row) for data in row if data in document_types]
 
-    document_page_links = [driver.find_element_by_link_text(data[0]).get_attribute('href') for data in target_rows]
+    document_page_links = [driver.find_element(By.LINK_TEXT, data[0]).get_attribute('href') for data in target_rows]
     print('Got document page links: ', document_page_links)
 
     for document_page in document_page_links:
         driver.get(document_page)
 
-        links = driver.find_elements_by_tag_name('a')
+        links = driver.find_elements(By.TAG_NAME, 'a')
         link_urls = [link.get_attribute('href') for link in links]
         document_file_links = [link for link in link_urls if link and (link.endswith('.txt') or link.endswith('.pdf'))]
         print('Found documents: ', document_file_links)
@@ -171,8 +172,8 @@ def get_project_metadata(project_id):
     driver.get(project_details_url)
 
     table_rows = []
-    for tr in driver.find_elements_by_xpath('//tr'):
-        tds = tr.find_elements_by_tag_name('td')
+    for tr in driver.find_elements(bY.xpath, '//tr'):
+        tds = tr.find_elements(By.TAG_NAME, 'td')
         row_object = {}
         for td in tds:
             data_key = td.get_attribute('data-th')
@@ -210,8 +211,8 @@ def get_project_metadata(project_id):
     driver.get(document_details_url)
 
     table_rows = []
-    for tr in driver.find_elements_by_xpath('//tr'):
-        tds = tr.find_elements_by_tag_name('td')
+    for tr in driver.find_elements(By.XPATH, '//tr'):
+        tds = tr.find_elements(By.TAG_NAME, 'td')
         table_rows.append([td.text for td in tds])
 
     document_details = []
@@ -220,7 +221,7 @@ def get_project_metadata(project_id):
         'date': row[1],
         'report_number': row[2],
         'document_type': row[3],
-        'document_url': driver.find_element_by_link_text(row[0]).get_attribute('href')
+        'document_url': driver.find_elements(By.LINK_TEXT, row[0]).get_attribute('href')
     }) for row in table_rows if len(row) == 4]   
     print(f'Document details for project {project_id}: ', document_details)
 
