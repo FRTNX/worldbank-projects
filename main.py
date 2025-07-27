@@ -97,14 +97,14 @@ def parse_target_package():
         return pids
 
 
-if not os.path.exists('aggregated.json') and not args.target_package:
+if not os.path.exists('aggregated.json') and not args.target_package and not args.project_id:
     print('aggregated.json not found. creating it from default xls file')
     transform_xls_to_json()
     args.xls_to_json = False
 
 
 projects = {}
-if not args.target_package:
+if not args.target_package and not args.project_id:
     with open('aggregated.json', 'r') as f:
         projects = json.loads(f.read())
 
@@ -139,8 +139,6 @@ with open('extraction_details.json', 'r') as f:
 driver = webdriver.Chrome(options=options)
 
 
-
-
 def get_project_documents(project_id, index, total):
     if project_id in extraction_details['documents']:
         print('Project documents already extracted for project: ', project_id)
@@ -154,6 +152,7 @@ def get_project_documents(project_id, index, total):
     for tr in driver.find_elements(By.XPATH, '//tr'):
         tds = tr.find_elements(By.TAG_NAME, 'td')
         table_rows.append([td.text for td in tds])
+    print('Project has document types:', [i[3] for i in table_rows if len(i) == 4])
 
     target_rows = []
     for row in table_rows:
@@ -392,7 +391,7 @@ def extraction_handler():
         [extract_staff_information(project_ids[i]) for i in range(0, number_projects)]
 
     if args.documents and args.project_id:
-        get_project_documents(args.project_id, 1, 1)
+        get_project_documents(args.project_id, 0, 1)
 
     if args.documents and args.project_id == None:
         [get_project_documents(project_ids[i], i, number_projects) for i in range(0, number_projects)]
