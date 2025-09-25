@@ -3,6 +3,9 @@ import csv
 import json
 import xlrd
 import requests
+import tempfile
+
+import pandas as pd
 from argparse import ArgumentParser
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -17,7 +20,12 @@ document_search_terms = [
     'Project Paper',
     'Project Information and Integrated Safeguards Data Sheet',
     'Staff Appraisal Report',
-    'Memorandum & Recommendation of the President'
+    'Memorandum & Recommendation of the President',
+    'Implementation Completion and Results Report',
+    'Implementation Completion Report Review',
+    'Agreement',
+    'Credit Agreement',
+    'Side Letter'
 ]
 
 parser = ArgumentParser(description='Fetch project data and documents from the World Bank')
@@ -27,6 +35,7 @@ parser.add_argument('-a', '--all-projects', action='store_true',
      help='fetches all project data and/or documents')
 parser.add_argument('-pid', '--project-id', type=str,
     help='fetches key documents for a single project')
+
 parser.add_argument('-d', '--documents', action='store_true',
     help='fetches documents and/or metadata for a single document')
 parser.add_argument('-m', '--metadata', action='store_true',
@@ -37,6 +46,8 @@ parser.add_argument('-dt', '--document-types',nargs='+', help='Fetch specific do
     including non-default types.')
 parser.add_argument('-tp', '--target-package',nargs='+', help='A csv file specifying specific \
     projects to fetch (format: project_id,proj_lgl_name)')
+parser.add_argument('-pidf', '--project_id_field', 
+    help="Where target package/file is specified, this defines which column label contains project ids.")
 parser.add_argument('-hl', '--headless', default=True, help='run the script in headless \
     mode, does not require Chrome to be running. Default is True. Set to False to track \
     script execution from the browser')
@@ -81,20 +92,27 @@ def transform_xls_to_json():
         
 def parse_target_package():
     print('got target package: ', args.target_package)
-    with open(args.target_package[0], mode='r') as file:
-        print('Found target package. Extracting project project ids.')
-        reader = csv.reader(file)
-        count = 0
-        pids = []
-        for row in reader:
-            if count == 0: # skip header row
-                count += 1
-                continue
-            else:
-                pids.append(row[0])
-                # counter no longer necessary
-        print(f'Extraction complete. Found {len(pids)} projects in target package.')
-        return pids
+    print('pid field:', args.project_id_field)
+    if args.target_package[0] and not args.project_id_field:
+        raise ValueError('Project ID Field (-pidf / --project_id_field) must be specified with target packages.')
+    df = pd.read_csv(args.target_package[0], low_memory=False)
+    print(df[args.project_id_field])
+    return df[args.project_id_field]
+
+    # with open(args.target_package[0], mode='r') as file:
+    #     print('Found target package. Extracting project project ids.')
+    #     reader = csv.reader(file)
+    #     count = 0
+    #     pids = []
+    #     for row in reader:
+    #         if count == 0: # skip header row
+    #             count += 1
+    #             continue
+    #         else:
+    #             pids.append(row[0])
+    #             # counter no longer necessary
+    #     print(f'Extraction complete. Found {len(pids)} projects in target package.')
+    #     return pids
 
 
 if not os.path.exists('aggregated.json') and not args.target_package and not args.project_id:
@@ -108,7 +126,6 @@ if not args.target_package and not args.project_id:
     with open('aggregated.json', 'r') as f:
         projects = json.loads(f.read())
 
-
 if (args.project_id == None and not args.target_package):
     project_ids = list(projects.keys())
 elif args.target_package:
@@ -117,7 +134,17 @@ else:
     project_ids = [args.project_id]
 
 
+# Path to your Chrome user data directory
+user_data_dir = "/home/frtnx/github/worldbank-projects/chrome-data" 
+
+# Name of the profile directory (e.g., "Profile 1" or "Default")
+profile_directory = "Profile 2" 
+
 options = Options()
+options.add_experimental_option("detach", True)
+options.add_argument(f"user-data-dir={user_data_dir}")
+options.add_argument(f"profile-directory={profile_directory}")
+
 if (args.headless):
     options.headless = True
 
@@ -383,6 +410,7 @@ def extraction_handler():
 
     number_projects = len(projects.keys()) if args.all_projects else args.number_projects
     print(f'Running extraction script on {1 if args.project_id else number_projects} project(s)')
+    print('project ids:', project_ids)
 
     if args.all_projects and not args.documents and not args.metadata and not args.aggregate and not args.reset \
         and not args.staff_information:
