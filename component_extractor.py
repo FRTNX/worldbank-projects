@@ -39,7 +39,7 @@ def extract_components(document):
     print('found components: ', components)
     
     # in some cases, project components are embedded within project objectives without separate 
-    # headings. in this case we can extract all sections related to projected objectives. this will typically 
+    # headings. in such cases we can extract all sections related to project objectives. this will typically 
     # fetch the components we seek but will also fetch objective outcomes where present, along with initial objectives,
     # adding to the noise.
     objectives = fetch_components_by_keyword(doc, 'objective')
