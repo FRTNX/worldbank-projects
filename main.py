@@ -201,6 +201,13 @@ def get_project_documents(project_id, index, total):
         for file_link in document_file_links:
             filename = f'{project_id}_{os.path.basename(file_link)}'
             os.system('mkdir documents') if not os.path.exists('./documents') else None
+            if len(document_types) == 1 and document_types[0] == 'Implementation Completion Report Review':
+                os.system('mkdir documents/icrr') if not os.path.exists('./documents/icrr') else None
+                if not os.path.exists(f'./documents/icrr/{filename}'):
+                    os.system(f"wget {file_link} -O './documents/icrr/{filename}'")
+                else:
+                    print('Document already exists: ', filename
+                          )
             if not os.path.exists(f'./documents/{filename}'):
                 os.system(f"wget {file_link} -O './documents/{filename}'")
             else:
