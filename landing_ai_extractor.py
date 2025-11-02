@@ -18,7 +18,7 @@ parser.add_argument('-d', '--document-dir', required=False,
 
 args = parser.parse_args()
 
-VA_API_KEY = 'ZXR5Z2NseWx6cHRlcjA4YWhsY3pxOnBPbExKdm9nRDhza1JwWE1ydkZ0NEJDcFhDTVJjT1R4' # Replace with your API key
+VA_API_KEY = 'API_KEY' # Replace with your API key
 headers = {"Authorization": f"Basic {VA_API_KEY}"}
 
 # Extract fields using the schema
