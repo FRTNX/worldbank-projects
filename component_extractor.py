@@ -1,5 +1,6 @@
 import os
 import json
+import requests
 import spacy
 from spacy_layout import spaCyLayout
 from argparse import ArgumentParser
@@ -14,8 +15,9 @@ parser.add_argument('-d', '--document-dir', required=True,
 args = parser.parse_args()
 
 # some notes on spaCy's awesomeness. although this function may look simple,
-# spaCy is using a compination of layout analysis and text labeling. each section 
-# of text is labeled by its parent heading and works very well with nested layouts.
+# spaCy is using a combination of layout analysis and text labeling. each section 
+# of text is labeled by the detected topic/label of its parent heading. 
+# works very well with nested layouts.
 def fetch_components_by_keyword(doc, keyword):
     components = []
     for span in doc.spans['layout']:

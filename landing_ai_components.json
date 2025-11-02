@@ -1,0 +1,1829 @@
+{
+    "data": [
+        {
+            "project_id": "P174440",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "To strengthen institutions to mitigate the social and economic impact of the COVID-19 pandemic."
+                        },
+                        {
+                            "objective": "To reinforce the structural foundations for an inclusive and climate smart economic recovery."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "Strengthening Institutions to Mitigate the Social and Economic Impact of the COVID-19 Pandemic",
+                            "original_allocation": "750,000,000.00",
+                            "actual_expenditure": "750,000,000.00",
+                            "description": "Supported measures to expand the number of poor and vulnerable household beneficiaries of cash transfers in response to job losses and wage cuts arising from the pandemic; adopt modes of digital payments to better deliver the emergency cash support to affected households; and introduce credit guarantees to provide needed credit and liquidity to enterprises adversely affected by the pandemic."
+                        },
+                        {
+                            "name": "Reinforcing the Structural Foundations for an Inclusive and Climate Smart Economic Recovery",
+                            "original_allocation": "750,000,000.00",
+                            "actual_expenditure": "750,000,000.00",
+                            "description": "Supported a wide range of structural and policy reforms to strengthen the country's economic recovery following the pandemic, including expanding financial inclusion with the use of the national identification number for financial transaction accounts; broadening the access of citizens to broadband services; fostering industrial competition through merger control; upgrading the country's climate change ambition and commitments; enhancing the verification system for GHG emissions mitigation including for carbon trading; and expanding access to resilient housing through lower savings requirements for low income groups and incentives for sustainable construction."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "To strengthen institutions to mitigate the social and economic impact of the COVID-19 pandemic.",
+                                "references": [
+                                    "d3e06cd8-5815-4da5-af44-5b3434745356",
+                                    "f19c9fe3-e4f3-4ac7-954c-a13fd56265d0",
+                                    "b1710da5-8eb6-4f47-88c8-205839edae34"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "To reinforce the structural foundations for an inclusive and climate smart economic recovery.",
+                                "references": [
+                                    "d3e06cd8-5815-4da5-af44-5b3434745356",
+                                    "59fdc132-6058-4059-9c35-248a84dce295",
+                                    "ebeb006f-396f-4ef7-96a4-d267ff51ffe5"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "Strengthening Institutions to Mitigate the Social and Economic Impact of the COVID-19 Pandemic",
+                                "references": [
+                                    "f80db419-d21f-4cbe-9fe3-392c65599ea9"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "750,000,000.00",
+                                "references": [
+                                    "0-f",
+                                    "0-n"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "750,000,000.00",
+                                "references": [
+                                    "0-t"
+                                ]
+                            },
+                            "description": {
+                                "value": "Supported measures to expand the number of poor and vulnerable household beneficiaries of cash transfers in response to job losses and wage cuts arising from the pandemic; adopt modes of digital payments to better deliver the emergency cash support to affected households; and introduce credit guarantees to provide needed credit and liquidity to enterprises adversely affected by the pandemic.",
+                                "references": [
+                                    "f80db419-d21f-4cbe-9fe3-392c65599ea9"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Reinforcing the Structural Foundations for an Inclusive and Climate Smart Economic Recovery",
+                                "references": [
+                                    "e155d7b5-fb64-45e0-bfaf-789c2c3ac592"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "750,000,000.00",
+                                "references": [
+                                    "0-f",
+                                    "0-n"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "750,000,000.00",
+                                "references": [
+                                    "0-t"
+                                ]
+                            },
+                            "description": {
+                                "value": "Supported a wide range of structural and policy reforms to strengthen the country's economic recovery following the pandemic, including expanding financial inclusion with the use of the national identification number for financial transaction accounts; broadening the access of citizens to broadband services; fostering industrial competition through merger control; upgrading the country's climate change ambition and commitments; enhancing the verification system for GHG emissions mitigation including for carbon trading; and expanding access to resilient housing through lower savings requirements for low income groups and incentives for sustainable construction.",
+                                "references": [
+                                    "e155d7b5-fb64-45e0-bfaf-789c2c3ac592"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 5862,
+                    "credit_usage": 17.4,
+                    "job_id": "hpahliay0a6hgl7c03g034dsx",
+                    "version": "extract-20250930"
+                }
+            }
+        },
+        {
+            "project_id": "P049290",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "To generate revenues, through environmentally and socially sustainable development of NT2's hydropower potential, which will be used to finance priority poverty reduction and environmental management programs."
+                        },
+                        {
+                            "objective": "To assist the Recipient to implement priority poverty reduction and environmental programs by generating revenues through environmentally and socially sustainable exploitation of the resources potentially generated from the Nam Theun 2 Hydroelectric Power facility."
+                        },
+                        {
+                            "objective": "Exploitation of hydro resources to generate electricity and related revenues from the NT2 hydroelectric power facility."
+                        },
+                        {
+                            "objective": "Exploitation of resources for the Nam Theun 2 Hydroelectric Power facility in an environmentally sustainable manner."
+                        },
+                        {
+                            "objective": "Exploitation of resources for the Nam Theun 2 Hydroelectric Power facility in a socially sustainable manner."
+                        },
+                        {
+                            "objective": "Assist the recipient with implementation of priority poverty reduction and environmental programs from revenue generated from Nam Theun 2 Hydroelectric Power facility."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "NT2 Hydropower Facility",
+                            "original_allocation": "US$722.2 million",
+                            "actual_expenditure": "US$736.1 million",
+                            "description": "Construction of a hydropower facility with a capacity of 1,070 MW, providing 995 MW for export to Thailand and 75 MW for domestic use. The facility comprised a 39m high dam and a 450 km2 reservoir on the Nam Theun River and Nakai Plateau. It also included 138 km transmission line to the Thai border and 70 kms of transmission lines to the national grid."
+                        },
+                        {
+                            "name": "Management of Environmental and Social Impacts of NT2",
+                            "original_allocation": "US$48.8 million",
+                            "actual_expenditure": "US$78.6 million",
+                            "description": "Implementation of a Social Development Plan (SDP) comprising the construction of resettlement villages for 6,300 project affected persons (PAPs) on the Nakai Plateau, design and delivery of livelihood programs for PAPs, design and implementation of measures to restore and enhance household income, and technical assistance to strengthen the Government's capacity in areas related to resettlement; implementation of an Environmental Assessment and Management Plan (EAMP) in the Nakai Plateau and downstream areas comprising mitigation measures, wildlife management programs, water quality monitoring and management programs, flood control measures, supervision and monitoring of construction contractor's environmental mitigation and monitoring plan, and technical assistance to strengthen the capacity of the Government's environmental management unit; implementation of Downstream Program for fisheries and fishing impacts of river diversions; and implementation of the Social and Environment Management Framework and First Operational Plan (SEMFOP) for the NT2 watershed."
+                        },
+                        {
+                            "name": "Monitoring and Evaluation",
+                            "original_allocation": "",
+                            "actual_expenditure": "",
+                            "description": "These arrangements included the design and adjustment of the RF to ensure compliance with all project fiduciary requirements. It included: supervision of physical implementation; independent review of key project components through the Dam Safety Review Panel (DSRP) and Panel of Environment and Social Experts (POE); systematic monitoring of technical, and environmental and social (E&S) safeguards by a professional firm; an Independent Advisory Group (IAG) to advise World Bank senior management on project implementation; and supervision by World Bank staff, other International Finance Institutions (IFIs), and bilateral agencies."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "To generate revenues, through environmentally and socially sustainable development of NT2's hydropower potential, which will be used to finance priority poverty reduction and environmental management programs.",
+                                "references": [
+                                    "eae084ae-93d4-47c5-b742-e5132c2ba950"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "To assist the Recipient to implement priority poverty reduction and environmental programs by generating revenues through environmentally and socially sustainable exploitation of the resources potentially generated from the Nam Theun 2 Hydroelectric Power facility.",
+                                "references": [
+                                    "f4a01d8c-bc21-47b9-8820-fb63d299355d"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Exploitation of hydro resources to generate electricity and related revenues from the NT2 hydroelectric power facility.",
+                                "references": [
+                                    "8adda6ae-765d-49c3-aab5-0caed7ac41ce"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Exploitation of resources for the Nam Theun 2 Hydroelectric Power facility in an environmentally sustainable manner.",
+                                "references": [
+                                    "9c8b265b-6d73-448f-83a0-0e316bf40434"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Exploitation of resources for the Nam Theun 2 Hydroelectric Power facility in a socially sustainable manner.",
+                                "references": [
+                                    "e5615058-d256-4870-bbb0-1b84d7f9ea3e"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Assist the recipient with implementation of priority poverty reduction and environmental programs from revenue generated from Nam Theun 2 Hydroelectric Power facility.",
+                                "references": [
+                                    "e444d233-8962-4d79-b7fe-bcaa1b453f30"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "NT2 Hydropower Facility",
+                                "references": [
+                                    "fc9f061f-537d-4157-91e1-fdf85af9d238"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$722.2 million",
+                                "references": [
+                                    "fc9f061f-537d-4157-91e1-fdf85af9d238"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$736.1 million",
+                                "references": [
+                                    "fc9f061f-537d-4157-91e1-fdf85af9d238"
+                                ]
+                            },
+                            "description": {
+                                "value": "Construction of a hydropower facility with a capacity of 1,070 MW, providing 995 MW for export to Thailand and 75 MW for domestic use. The facility comprised a 39m high dam and a 450 km2 reservoir on the Nam Theun River and Nakai Plateau. It also included 138 km transmission line to the Thai border and 70 kms of transmission lines to the national grid.",
+                                "references": [
+                                    "dfd30bf1-058a-476d-bd16-7639d20696a8"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Management of Environmental and Social Impacts of NT2",
+                                "references": [
+                                    "cdf72fe4-e2ab-4f0c-8287-3526035bb9ab"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$48.8 million",
+                                "references": [
+                                    "cdf72fe4-e2ab-4f0c-8287-3526035bb9ab"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$78.6 million",
+                                "references": [
+                                    "cdf72fe4-e2ab-4f0c-8287-3526035bb9ab"
+                                ]
+                            },
+                            "description": {
+                                "value": "Implementation of a Social Development Plan (SDP) comprising the construction of resettlement villages for 6,300 project affected persons (PAPs) on the Nakai Plateau, design and delivery of livelihood programs for PAPs, design and implementation of measures to restore and enhance household income, and technical assistance to strengthen the Government's capacity in areas related to resettlement; implementation of an Environmental Assessment and Management Plan (EAMP) in the Nakai Plateau and downstream areas comprising mitigation measures, wildlife management programs, water quality monitoring and management programs, flood control measures, supervision and monitoring of construction contractor's environmental mitigation and monitoring plan, and technical assistance to strengthen the capacity of the Government's environmental management unit; implementation of Downstream Program for fisheries and fishing impacts of river diversions; and implementation of the Social and Environment Management Framework and First Operational Plan (SEMFOP) for the NT2 watershed.",
+                                "references": [
+                                    "cdf72fe4-e2ab-4f0c-8287-3526035bb9ab",
+                                    "9d2987b3-7286-47c6-874f-716919e54676"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Monitoring and Evaluation",
+                                "references": [
+                                    "c3819829-d260-4854-861d-1d4e85888ea4"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "",
+                                "references": []
+                            },
+                            "actual_expenditure": {
+                                "value": "",
+                                "references": []
+                            },
+                            "description": {
+                                "value": "These arrangements included the design and adjustment of the RF to ensure compliance with all project fiduciary requirements. It included: supervision of physical implementation; independent review of key project components through the Dam Safety Review Panel (DSRP) and Panel of Environment and Social Experts (POE); systematic monitoring of technical, and environmental and social (E&S) safeguards by a professional firm; an Independent Advisory Group (IAG) to advise World Bank senior management on project implementation; and supervision by World Bank staff, other International Finance Institutions (IFIs), and bilateral agencies.",
+                                "references": [
+                                    "c3819829-d260-4854-861d-1d4e85888ea4"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 7450,
+                    "credit_usage": 24.8,
+                    "job_id": "dgygh8cvvvf3snbwzyjg5teou",
+                    "version": "extract-20250930"
+                }
+            }
+        },
+        {
+            "project_id": "P173521",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "Deliver cash transfers to Sudanese families affected by expected economic reforms and other short-term shocks."
+                        },
+                        {
+                            "objective": "Improve safety nets systems."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "Provision of Cash Transfers",
+                            "original_allocation": "US$350 million",
+                            "actual_expenditure": "US$140.8 million",
+                            "description": "Under this component, the project planned to provide unconditional cash transfer of US$5 per person per month in four States: Khartoum, Red Sea, South Darfur, and Kassala. It targeted 2 million families (11.8 million beneficiaries), representing 80 percent of their combined population."
+                        },
+                        {
+                            "name": "Establish Delivery Systems and Build Institutional Capacity",
+                            "original_allocation": "US$40 million",
+                            "actual_expenditure": "US$32 million",
+                            "description": "This component was designed to provide financing for outreach and registration, enrollment, beneficiary verification, payment delivery, a Grievance Redress Mechanism (GRM), a Management Information System (MIS), and enhancements to the National Civil Registry (NCR) as well as an enabling legal framework for data protection and privacy."
+                        },
+                        {
+                            "name": "Project Management, Monitoring and Evaluation, and Learning",
+                            "original_allocation": "US$10 million",
+                            "actual_expenditure": "US$8.1 million",
+                            "description": "This component aimed to support coordination and project management activities necessary for smooth functioning of the project. The envisaged activities included M&E, day-to-day operational management, capacity building, institutional setup, and donor coordination by the Project Implementation Unit (PIU)."
+                        },
+                        {
+                            "name": "Contingent Emergency Response Component (CERC)",
+                            "original_allocation": "US$0",
+                            "actual_expenditure": "US$0",
+                            "description": "A zero-cost CERC allowed the project to provide immediate recovery support to the government to address a future eligible crisis or emergency."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "Deliver cash transfers to Sudanese families affected by expected economic reforms and other short-term shocks.",
+                                "references": [
+                                    "912d905f-b086-43aa-9029-4540c2901128",
+                                    "6b87670b-e53d-4229-b293-f5feb2f5870b"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Improve safety nets systems.",
+                                "references": [
+                                    "912d905f-b086-43aa-9029-4540c2901128",
+                                    "9423eda3-a86e-43a2-9abf-5e9918ac7d6f"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "Provision of Cash Transfers",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$350 million",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$140.8 million",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "description": {
+                                "value": "Under this component, the project planned to provide unconditional cash transfer of US$5 per person per month in four States: Khartoum, Red Sea, South Darfur, and Kassala. It targeted 2 million families (11.8 million beneficiaries), representing 80 percent of their combined population.",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Establish Delivery Systems and Build Institutional Capacity",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$40 million",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$32 million",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component was designed to provide financing for outreach and registration, enrollment, beneficiary verification, payment delivery, a Grievance Redress Mechanism (GRM), a Management Information System (MIS), and enhancements to the National Civil Registry (NCR) as well as an enabling legal framework for data protection and privacy.",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Project Management, Monitoring and Evaluation, and Learning",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$10 million",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$8.1 million",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component aimed to support coordination and project management activities necessary for smooth functioning of the project. The envisaged activities included M&E, day-to-day operational management, capacity building, institutional setup, and donor coordination by the Project Implementation Unit (PIU).",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Contingent Emergency Response Component (CERC)",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$0",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$0",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            },
+                            "description": {
+                                "value": "A zero-cost CERC allowed the project to provide immediate recovery support to the government to address a future eligible crisis or emergency.",
+                                "references": [
+                                    "a08ea6d5-bca9-4ad1-ba67-91558e0b452d"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 6892,
+                    "credit_usage": 17.7,
+                    "job_id": "s7h6brlapfb0yb755vp3x7pan",
+                    "version": "extract-20250930"
+                }
+            }
+        },
+        {
+            "project_id": "P174527",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "Strengthen the health and social protection responses to COVID-19."
+                        },
+                        {
+                            "objective": "Save jobs and protect livelihoods of households and firms."
+                        },
+                        {
+                            "objective": "Strengthen fiscal management and transparency."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "Health and Social Protection Response",
+                            "original_allocation": "US$3.7 million",
+                            "actual_expenditure": "US$3.7 million",
+                            "description": "Strengthening the capacity of the health and social protection systems to respond to the health threat posed by the COVID-19 crisis, including adoption of regulations governing the national response and approval of temporary measures to mitigate negative impacts by protecting workers."
+                        },
+                        {
+                            "name": "Income and Payroll Support for Tourism Sector",
+                            "original_allocation": "US$7.4 million",
+                            "actual_expenditure": "US$7.4 million",
+                            "description": "Temporary payroll support program targeting tourism-related businesses and income support for self-employed workers in the tourism sector, to save jobs and partially compensate for loss of income due to the pandemic."
+                        },
+                        {
+                            "name": "Agricultural Support and Food Security",
+                            "original_allocation": "EC$3.5 million",
+                            "actual_expenditure": "EC$3.5 million",
+                            "description": "Support for farming communities and workers in agro-processing and food exporting industry through provision of agricultural inputs, compensation of labor cost, and financial assistance to sector associations, aimed at mitigating negative impacts and fostering growth in agriculture."
+                        },
+                        {
+                            "name": "Support for MSMEs (Micro, Small and Medium Enterprises)",
+                            "original_allocation": "",
+                            "actual_expenditure": "",
+                            "description": "Additional funding for small hoteliers and small business soft lending facilities, deferment of tax payments, and other measures to support access to finance and operational continuity for MSMEs in critical sectors during the COVID-19 crisis."
+                        },
+                        {
+                            "name": "Fiscal Management and Transparency Reforms",
+                            "original_allocation": "",
+                            "actual_expenditure": "",
+                            "description": "Structural reform measures to strengthen public financial management, governance, and transparency, including improved debt reporting, adoption of asset management frameworks, international accounting standards, and internal audit reforms."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "Strengthen the health and social protection responses to COVID-19.",
+                                "references": [
+                                    "3625f7b3-59b6-4091-bbd4-28e853828937",
+                                    "d9051bac-bd0a-4a45-a6a0-c46f06a865bb"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Save jobs and protect livelihoods of households and firms.",
+                                "references": [
+                                    "3625f7b3-59b6-4091-bbd4-28e853828937",
+                                    "d9051bac-bd0a-4a45-a6a0-c46f06a865bb"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Strengthen fiscal management and transparency.",
+                                "references": [
+                                    "3625f7b3-59b6-4091-bbd4-28e853828937",
+                                    "d9051bac-bd0a-4a45-a6a0-c46f06a865bb"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "Health and Social Protection Response",
+                                "references": [
+                                    "2f31a719-4ac7-478b-8066-b09e6186aa0e",
+                                    "1222e3c6-21af-4f6e-a9e4-2f587483976f"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$3.7 million",
+                                "references": [
+                                    "543b8748-c29d-4339-9bfb-57dd955eb24e"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$3.7 million",
+                                "references": [
+                                    "543b8748-c29d-4339-9bfb-57dd955eb24e"
+                                ]
+                            },
+                            "description": {
+                                "value": "Strengthening the capacity of the health and social protection systems to respond to the health threat posed by the COVID-19 crisis, including adoption of regulations governing the national response and approval of temporary measures to mitigate negative impacts by protecting workers.",
+                                "references": [
+                                    "2e5acde1-ac8b-41bd-ab9a-49e0bf65ebc3",
+                                    "9e6d6fbc-eed5-4f4a-ad07-bfe056d9aeef",
+                                    "543b8748-c29d-4339-9bfb-57dd955eb24e"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Income and Payroll Support for Tourism Sector",
+                                "references": [
+                                    "c9738ad8-7e75-49cc-9274-c8c9ded8faad"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$7.4 million",
+                                "references": [
+                                    "c9738ad8-7e75-49cc-9274-c8c9ded8faad"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$7.4 million",
+                                "references": [
+                                    "c9738ad8-7e75-49cc-9274-c8c9ded8faad"
+                                ]
+                            },
+                            "description": {
+                                "value": "Temporary payroll support program targeting tourism-related businesses and income support for self-employed workers in the tourism sector, to save jobs and partially compensate for loss of income due to the pandemic.",
+                                "references": [
+                                    "c9738ad8-7e75-49cc-9274-c8c9ded8faad"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Agricultural Support and Food Security",
+                                "references": [
+                                    "db0b3d2a-63b5-4794-88fa-af15831bda72"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "EC$3.5 million",
+                                "references": [
+                                    "db0b3d2a-63b5-4794-88fa-af15831bda72"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "EC$3.5 million",
+                                "references": [
+                                    "db0b3d2a-63b5-4794-88fa-af15831bda72"
+                                ]
+                            },
+                            "description": {
+                                "value": "Support for farming communities and workers in agro-processing and food exporting industry through provision of agricultural inputs, compensation of labor cost, and financial assistance to sector associations, aimed at mitigating negative impacts and fostering growth in agriculture.",
+                                "references": [
+                                    "db0b3d2a-63b5-4794-88fa-af15831bda72"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Support for MSMEs (Micro, Small and Medium Enterprises)",
+                                "references": [
+                                    "de2a4b44-c65d-42f4-92be-1cc479ac2692"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "",
+                                "references": []
+                            },
+                            "actual_expenditure": {
+                                "value": "",
+                                "references": []
+                            },
+                            "description": {
+                                "value": "Additional funding for small hoteliers and small business soft lending facilities, deferment of tax payments, and other measures to support access to finance and operational continuity for MSMEs in critical sectors during the COVID-19 crisis.",
+                                "references": [
+                                    "de2a4b44-c65d-42f4-92be-1cc479ac2692"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fiscal Management and Transparency Reforms",
+                                "references": [
+                                    "4468e595-5c90-43f7-bbed-63dac2a29e26"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "",
+                                "references": []
+                            },
+                            "actual_expenditure": {
+                                "value": "",
+                                "references": []
+                            },
+                            "description": {
+                                "value": "Structural reform measures to strengthen public financial management, governance, and transparency, including improved debt reporting, adoption of asset management frameworks, international accounting standards, and internal audit reforms.",
+                                "references": [
+                                    "4468e595-5c90-43f7-bbed-63dac2a29e26",
+                                    "b900866a-da6f-40ff-9818-9f6878345f36",
+                                    "b010b95a-7664-4eaa-bb2c-73763beaac3f",
+                                    "8a08cbe1-3504-4d85-a6dd-c3cca361fe83",
+                                    "715f7ecf-f108-4c95-aa10-da45f60cf39f"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 9791,
+                    "credit_usage": 15.9,
+                    "job_id": "j6ykka015v2irowqf2a2gjwar",
+                    "version": "extract-20250930"
+                }
+            }
+        },
+        {
+            "project_id": "P174268",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "To strengthen the basic school system's institutional capacity to respond to, and recover from, the COVID-19 crisis."
+                        },
+                        {
+                            "objective": "To build resilience to face future crises from pre-primary to secondary levels."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "Engaging in Systemic Response",
+                            "original_allocation": "US$ 3.46 million",
+                            "actual_expenditure": "US$ 2.82 million",
+                            "description": "This component aimed to provide technical assistance to implement immediate response interventions. Activities included support to remote learning by developing and disseminating educational content, deploying communication campaigns, and ensuring readiness for school re-opening."
+                        },
+                        {
+                            "name": "Supporting Education Systems Recovery",
+                            "original_allocation": "US$ 8.06 million",
+                            "actual_expenditure": "US$ 8.01 million",
+                            "description": "This component focused on recovery strategies for once schools re-opened. Activities included support to: establish school health protocols, maximize re-enrollment at pre-primary and primary levels, assess student learning loss, and support recovery through teacher professional development programs."
+                        },
+                        {
+                            "name": "Building System Resilience",
+                            "original_allocation": "US$ 1.97 million",
+                            "actual_expenditure": "US$ 1.96 million",
+                            "description": "This component aimed to support the Ministry of Primary and Mass Education (MoPME) and the Ministry of Education (MoE) in responding to and recovering from future shocks."
+                        },
+                        {
+                            "name": "Project Management, Results Monitoring and Communication",
+                            "original_allocation": "US$ 1.31 million",
+                            "actual_expenditure": "US$ 1.22 million",
+                            "description": "This component aimed to support project management and build results monitoring and evaluation (M&E) capability."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "To strengthen the basic school system's institutional capacity to respond to, and recover from, the COVID-19 crisis.",
+                                "references": [
+                                    "ebd01cfd-ba1e-47e6-8b7b-b5353a1ae753"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "To build resilience to face future crises from pre-primary to secondary levels.",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "Engaging in Systemic Response",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$ 3.46 million",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$ 2.82 million",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component aimed to provide technical assistance to implement immediate response interventions. Activities included support to remote learning by developing and disseminating educational content, deploying communication campaigns, and ensuring readiness for school re-opening.",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Supporting Education Systems Recovery",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$ 8.06 million",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$ 8.01 million",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component focused on recovery strategies for once schools re-opened. Activities included support to: establish school health protocols, maximize re-enrollment at pre-primary and primary levels, assess student learning loss, and support recovery through teacher professional development programs.",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Building System Resilience",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$ 1.97 million",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$ 1.96 million",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component aimed to support the Ministry of Primary and Mass Education (MoPME) and the Ministry of Education (MoE) in responding to and recovering from future shocks.",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Project Management, Results Monitoring and Communication",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$ 1.31 million",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$ 1.22 million",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component aimed to support project management and build results monitoring and evaluation (M&E) capability.",
+                                "references": [
+                                    "7ddd6911-b3b0-47bf-a166-688d05da47bb"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 6282,
+                    "credit_usage": 8.3,
+                    "job_id": "szg7cb99tizpu7i24wsr0up14",
+                    "version": "extract-20250930"
+                }
+            }
+        },
+        {
+            "project_id": "P172705",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "To improve access to early childhood education in targeted counties with improved teacher deployment."
+                        },
+                        {
+                            "objective": "Improved access to early childhood education in the six targeted counties."
+                        },
+                        {
+                            "objective": "Improved teacher deployment."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "Improving access to ECE in targeted counties",
+                            "original_allocation": "US$ 3.14 million",
+                            "actual_expenditure": "US$ 3.069 million",
+                            "description": "This component aimed to strengthen ECE foundations in six targeted counties, in alignment with the government's Education Sector Plan (ESP, 2017\u20132021). These six counties, which lagged behind others on ECE access and service delivery, were also targeted under the previous operation, G2B. Improving ECE access in these counties was required to improve overall ECE access and equity of delivery in Liberia. This component consisted of three sub-components: construction of ECE classrooms, latrines, and water systems; provision of ECE teaching and learning materials; and providing an Accelerated Learning Plan (ALP) for overage ECE students."
+                        },
+                        {
+                            "name": "Improving learning outcomes through increased equity, efficiency, and accountability",
+                            "original_allocation": "US$ 1.77 million",
+                            "actual_expenditure": "US$ 1.77 million",
+                            "description": "This component sought to provide financing through three Performance Based Conditions (PBCs) to incentivize broader improvements in equity, efficiency, and learning outcomes in the education system. PBC 1 aimed to increase the proportion of qualified ECE and primary teachers in the targeted counties; PBC 2 aimed to improve teacher payroll management by linking certification to biometric National Identification; PBC 3 was designed to incentivize the implementation and publication of a National Learning Assessment for Grades 3 and 6 in English and Mathematics."
+                        },
+                        {
+                            "name": "Strengthening Project management and sector support and coordination",
+                            "original_allocation": "US$ 0.69 million",
+                            "actual_expenditure": "US$ 0.766 million",
+                            "description": "This component aimed to support the Ministry of Education in the areas of Project management, coordination, monitoring and evaluation (including the Project's Independent Verification Agent), financial management, procurement, and environmental and social safeguards management. It was expected to finance operational costs for managing the Project, training for Project management staff, recruitment of technical experts, and surveys and evaluations. The component also supported activities related to school and community outreach and education sector coordination."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "To improve access to early childhood education in targeted counties with improved teacher deployment.",
+                                "references": [
+                                    "eccaa6a9-93c2-48ef-80d8-1eb642bb4cdb"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Improved access to early childhood education in the six targeted counties.",
+                                "references": [
+                                    "de9e4a7a-ee1d-4fac-9c2a-57083f6eeaa5"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Improved teacher deployment.",
+                                "references": [
+                                    "b4518c79-477b-4209-9e59-d398507d4914"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "Improving access to ECE in targeted counties",
+                                "references": [
+                                    "8c5e1a66-1949-4987-866c-1bf5bd6a1d19"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$ 3.14 million",
+                                "references": [
+                                    "8c5e1a66-1949-4987-866c-1bf5bd6a1d19"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$ 3.069 million",
+                                "references": [
+                                    "8c5e1a66-1949-4987-866c-1bf5bd6a1d19"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component aimed to strengthen ECE foundations in six targeted counties, in alignment with the government's Education Sector Plan (ESP, 2017\u20132021). These six counties, which lagged behind others on ECE access and service delivery, were also targeted under the previous operation, G2B. Improving ECE access in these counties was required to improve overall ECE access and equity of delivery in Liberia. This component consisted of three sub-components: construction of ECE classrooms, latrines, and water systems; provision of ECE teaching and learning materials; and providing an Accelerated Learning Plan (ALP) for overage ECE students.",
+                                "references": [
+                                    "8c5e1a66-1949-4987-866c-1bf5bd6a1d19",
+                                    "69ff9c00-1874-42ec-a2a2-d55b9a3f6c60"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Improving learning outcomes through increased equity, efficiency, and accountability",
+                                "references": [
+                                    "44f11d11-366f-4a7c-80d6-bce9aa5a6add"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$ 1.77 million",
+                                "references": [
+                                    "44f11d11-366f-4a7c-80d6-bce9aa5a6add"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$ 1.77 million",
+                                "references": [
+                                    "44f11d11-366f-4a7c-80d6-bce9aa5a6add"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component sought to provide financing through three Performance Based Conditions (PBCs) to incentivize broader improvements in equity, efficiency, and learning outcomes in the education system. PBC 1 aimed to increase the proportion of qualified ECE and primary teachers in the targeted counties; PBC 2 aimed to improve teacher payroll management by linking certification to biometric National Identification; PBC 3 was designed to incentivize the implementation and publication of a National Learning Assessment for Grades 3 and 6 in English and Mathematics.",
+                                "references": [
+                                    "44f11d11-366f-4a7c-80d6-bce9aa5a6add"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Strengthening Project management and sector support and coordination",
+                                "references": [
+                                    "254b8c53-1953-442d-be60-c5d1bf4ff400"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$ 0.69 million",
+                                "references": [
+                                    "254b8c53-1953-442d-be60-c5d1bf4ff400"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$ 0.766 million",
+                                "references": [
+                                    "254b8c53-1953-442d-be60-c5d1bf4ff400"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component aimed to support the Ministry of Education in the areas of Project management, coordination, monitoring and evaluation (including the Project's Independent Verification Agent), financial management, procurement, and environmental and social safeguards management. It was expected to finance operational costs for managing the Project, training for Project management staff, recruitment of technical experts, and surveys and evaluations. The component also supported activities related to school and community outreach and education sector coordination.",
+                                "references": [
+                                    "254b8c53-1953-442d-be60-c5d1bf4ff400"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 7538,
+                    "credit_usage": 16.4,
+                    "job_id": "yjjnu61glkjgpr5qqjf413nns",
+                    "version": "extract-20250930"
+                }
+            }
+        },
+        {
+            "project_id": "P055120",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "To improve the condition of the national paved road network, to lower transport cost on selected roads, and to expand the capacity of selected regional airports."
+                        },
+                        {
+                            "objective": "To improve the condition of the national paved road network, to lower transport cost on selected roads and to Songo Songo island, and to expand the capacity of selected airports."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "Rehabilitation and Preparation of Designs for Rehabilitation of Paved Trunk Roads",
+                            "original_allocation": "US$186.5 million",
+                            "actual_expenditure": "US$191.7 million",
+                            "description": "Rehabilitation and provision of supervision services for the improvement of the Korogwe - Same and Arusha - Minjingu roads (approximately 270 kilometers) and preparation of design and bidding documents for about 911 km of additional paved trunk roads for future rehabilitation."
+                        },
+                        {
+                            "name": "Improvement of Regional Airports",
+                            "original_allocation": "US$69.2 million",
+                            "actual_expenditure": "US$56.5 million",
+                            "description": "Paving and rehabilitation of the runway at Kigoma regional airport, rehabilitation of the main runway at Tabora regional airport, and extension, rehabilitation and paving of the runway and replacement of the apron, terminal and car parking at Bukoba airport."
+                        },
+                        {
+                            "name": "Improvement of Road Safety Management",
+                            "original_allocation": "US$6 million",
+                            "actual_expenditure": "US$4.6 million",
+                            "description": "Aimed to improve road safety management by establishing: (i) a National Road Safety Agency (NRSA); (ii) a Driver and Vehicle Examination and Licensing Agency (DVELA); and (iii) a Road Accident Information System (RAIS)."
+                        },
+                        {
+                            "name": "Promotion of Public Private Partnerships (PPPs)",
+                            "original_allocation": "US$5.0 million",
+                            "actual_expenditure": "US$3.4 million",
+                            "description": "Included (i) capacity building for the implementation of PPP projects; (ii) feasibility studies of potential PPP projects (including a Civil Aviation Master Plan and PPP feasibility assessments for the Tanzania Airport Authority (TAA) airports, a Freight Centre feasibility study, a study for removal of bottlenecks on local government roads, assistance to prepare a bankable central rail project); and (iii) provision of transaction advisors for projects found feasible."
+                        },
+                        {
+                            "name": "Emergency Road and Bridge Repair",
+                            "original_allocation": "US$15.0 million",
+                            "actual_expenditure": "US$13.9 million",
+                            "description": "Emergency repair of parts of national roads and bridges damaged by floods at the time of appraisal at approximately 100 locations throughout Tanzania. Included retroactive financing of 40% of the component amount and accelerated, consolidated and simplified procurement and safeguards."
+                        },
+                        {
+                            "name": "Zanzibar International Airport Improvement (added at additional financing)",
+                            "original_allocation": "US$57.0 million",
+                            "actual_expenditure": "US$50.7 million",
+                            "description": "Rehabilitation and extension of Zanzibar Airport's taxiways and apron. The improvement had already been planned and designed as part of an earlier World Bank-financed transport project."
+                        },
+                        {
+                            "name": "Songo Songo Jetty Repair (added at additional financing)",
+                            "original_allocation": "US$2.0 million",
+                            "actual_expenditure": "US$2.2 million",
+                            "description": "Rehabilitate and extend the Songo Songo jetty as a social mitigation measure for the Bank's closed Songo Songo Gas Extraction Project. The new jetty was not sufficient, submerging during high tides and becoming dangerously shallow during low tides."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "To improve the condition of the national paved road network, to lower transport cost on selected roads, and to expand the capacity of selected regional airports.",
+                                "references": [
+                                    "49b88a65-2d3e-4883-bc9b-ba534e256399",
+                                    "80395331-a523-47cf-81ac-a2659939ebdc"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "To improve the condition of the national paved road network, to lower transport cost on selected roads and to Songo Songo island, and to expand the capacity of selected airports.",
+                                "references": [
+                                    "49b88a65-2d3e-4883-bc9b-ba534e256399",
+                                    "80395331-a523-47cf-81ac-a2659939ebdc"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "Rehabilitation and Preparation of Designs for Rehabilitation of Paved Trunk Roads",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$186.5 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$191.7 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "description": {
+                                "value": "Rehabilitation and provision of supervision services for the improvement of the Korogwe - Same and Arusha - Minjingu roads (approximately 270 kilometers) and preparation of design and bidding documents for about 911 km of additional paved trunk roads for future rehabilitation.",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Improvement of Regional Airports",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$69.2 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$56.5 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "description": {
+                                "value": "Paving and rehabilitation of the runway at Kigoma regional airport, rehabilitation of the main runway at Tabora regional airport, and extension, rehabilitation and paving of the runway and replacement of the apron, terminal and car parking at Bukoba airport.",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Improvement of Road Safety Management",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$6 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$4.6 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "description": {
+                                "value": "Aimed to improve road safety management by establishing: (i) a National Road Safety Agency (NRSA); (ii) a Driver and Vehicle Examination and Licensing Agency (DVELA); and (iii) a Road Accident Information System (RAIS).",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Promotion of Public Private Partnerships (PPPs)",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$5.0 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$3.4 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "description": {
+                                "value": "Included (i) capacity building for the implementation of PPP projects; (ii) feasibility studies of potential PPP projects (including a Civil Aviation Master Plan and PPP feasibility assessments for the Tanzania Airport Authority (TAA) airports, a Freight Centre feasibility study, a study for removal of bottlenecks on local government roads, assistance to prepare a bankable central rail project); and (iii) provision of transaction advisors for projects found feasible.",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Emergency Road and Bridge Repair",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$15.0 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$13.9 million",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            },
+                            "description": {
+                                "value": "Emergency repair of parts of national roads and bridges damaged by floods at the time of appraisal at approximately 100 locations throughout Tanzania. Included retroactive financing of 40% of the component amount and accelerated, consolidated and simplified procurement and safeguards.",
+                                "references": [
+                                    "b9e2a43e-61a7-4f9b-a26a-3053d3625d21"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Zanzibar International Airport Improvement (added at additional financing)",
+                                "references": [
+                                    "57d8249e-b40c-405e-a999-0831624008e0"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$57.0 million",
+                                "references": [
+                                    "57d8249e-b40c-405e-a999-0831624008e0"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$50.7 million",
+                                "references": [
+                                    "57d8249e-b40c-405e-a999-0831624008e0"
+                                ]
+                            },
+                            "description": {
+                                "value": "Rehabilitation and extension of Zanzibar Airport's taxiways and apron. The improvement had already been planned and designed as part of an earlier World Bank-financed transport project.",
+                                "references": [
+                                    "57d8249e-b40c-405e-a999-0831624008e0"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Songo Songo Jetty Repair (added at additional financing)",
+                                "references": [
+                                    "57d8249e-b40c-405e-a999-0831624008e0"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$2.0 million",
+                                "references": [
+                                    "57d8249e-b40c-405e-a999-0831624008e0"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$2.2 million",
+                                "references": [
+                                    "57d8249e-b40c-405e-a999-0831624008e0"
+                                ]
+                            },
+                            "description": {
+                                "value": "Rehabilitate and extend the Songo Songo jetty as a social mitigation measure for the Bank's closed Songo Songo Gas Extraction Project. The new jetty was not sufficient, submerging during high tides and becoming dangerously shallow during low tides.",
+                                "references": [
+                                    "57d8249e-b40c-405e-a999-0831624008e0"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 9547,
+                    "credit_usage": 13.6,
+                    "job_id": "abglct456rezafgkm30ys9qxn",
+                    "version": "extract-20250930"
+                }
+            }
+        },
+        {
+            "project_id": "P171751",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "Improving the efficiency, sustainability, and transparency of resource allocation in the economy."
+                        },
+                        {
+                            "objective": "Enhancing economic inclusion and social resilience."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "Efficiency, sustainability, and transparency of resource allocation",
+                            "original_allocation": "500,000,000.00",
+                            "actual_expenditure": "500,000,000.00",
+                            "description": "This component aimed to improve the efficiency, sustainability, and transparency of resource allocation in the economy by curtailing subsidized and state-directed bank lending, ending state-mandated cotton production, reducing inefficient fossil fuel subsidies, improving the investment environment for public-private partnerships in renewable energy and other infrastructure sectors, establishing a systematic approach to the management and privatization of state-owned enterprises (SOEs), and improving fiscal transparency."
+                        },
+                        {
+                            "name": "Enhancing economic inclusion and social resilience",
+                            "original_allocation": "",
+                            "actual_expenditure": "",
+                            "description": "This component aimed to enhance economic inclusion and social resilience by ending almost all internal migration controls, establishing legal frameworks to address gender-based violence and ensure equal opportunities for women, and expanding social assistance to vulnerable households while strengthening the effectiveness of the safety net system."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "Improving the efficiency, sustainability, and transparency of resource allocation in the economy.",
+                                "references": [
+                                    "418e6e80-3cc0-4d5d-9462-4bf9a2344571",
+                                    "0e78340a-7968-4bd8-beb7-c490d7bf16af",
+                                    "f7ebdc4b-6464-448a-afa5-db744d6f542b"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Enhancing economic inclusion and social resilience.",
+                                "references": [
+                                    "418e6e80-3cc0-4d5d-9462-4bf9a2344571",
+                                    "0e78340a-7968-4bd8-beb7-c490d7bf16af",
+                                    "3812ff47-9b88-42fc-b4f5-9b68c2ac46ef"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "Efficiency, sustainability, and transparency of resource allocation",
+                                "references": [
+                                    "cd2b65d8-b484-421d-baab-d47851e71522",
+                                    "2-2"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "500,000,000.00",
+                                "references": [
+                                    "0-l"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "500,000,000.00",
+                                "references": [
+                                    "0-r"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component aimed to improve the efficiency, sustainability, and transparency of resource allocation in the economy by curtailing subsidized and state-directed bank lending, ending state-mandated cotton production, reducing inefficient fossil fuel subsidies, improving the investment environment for public-private partnerships in renewable energy and other infrastructure sectors, establishing a systematic approach to the management and privatization of state-owned enterprises (SOEs), and improving fiscal transparency.",
+                                "references": [
+                                    "2b111958-95c2-4de7-9e89-fecfb3a74371"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Enhancing economic inclusion and social resilience",
+                                "references": [
+                                    "3-4"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "",
+                                "references": []
+                            },
+                            "actual_expenditure": {
+                                "value": "",
+                                "references": []
+                            },
+                            "description": {
+                                "value": "This component aimed to enhance economic inclusion and social resilience by ending almost all internal migration controls, establishing legal frameworks to address gender-based violence and ensure equal opportunities for women, and expanding social assistance to vulnerable households while strengthening the effectiveness of the safety net system.",
+                                "references": [
+                                    "319574df-821b-405e-8123-68d4820fcf36"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 4495,
+                    "credit_usage": 13.2,
+                    "job_id": "f38p8qvlsm3njq1fa9gpf3roz",
+                    "version": "extract-20250930"
+                }
+            }
+        },
+        {
+            "project_id": "P174352",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "To prevent, detect and respond to the threat posed by COVID-19 and strengthen national systems for public health preparedness in Sudan."
+                        },
+                        {
+                            "objective": "Strengthen case detection and confirmation and conduct contact tracing; improve clinical care capacity; raise public awareness and promote community engagement; and bolster coordination, planning, logistical support, and reporting."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "Component 1. Emergency COVID-19 Response",
+                            "original_allocation": "US$20.5 million",
+                            "actual_expenditure": "US$20.85 million",
+                            "description": "This component sought to prevent and limit the spread of COVID-19 in Sudan by providing immediate support to enhance case detection, testing, management, recording, and reporting, as well as strengthening contact tracing and risk assessments. It financed procurement of medical and non-medical supplies, medicines, and equipment aligned with WHO's list of disease commodities. Subcomponents included case detection, confirmation and contact tracing; health system strengthening; vaccine procurement and deployment; and solarization of health and vaccine storage facilities."
+                        },
+                        {
+                            "name": "Sub-Component 1.1: Case Detection, Confirmation and Contact Tracing",
+                            "original_allocation": "US$6.5 million",
+                            "actual_expenditure": "US$4.05 million",
+                            "description": "Supported strengthening of disease surveillance systems, public health laboratories, and epidemiological capacity for early detection and confirmation of cases, active contact tracing, epidemiological investigation, risk assessments, and timely data for decision-making. Activities included training rapid response and contact tracing teams, laboratory staff, and procurement and maintenance of diagnostic equipment and supplies."
+                        },
+                        {
+                            "name": "Sub-Component 1.2: Health System Strengthening",
+                            "original_allocation": "US$14.0 million",
+                            "actual_expenditure": "US$8.09 million",
+                            "description": "Supported strengthening Sudan's health system for COVID-19 care by enhancing clinical capacity, implementing IPC measures, establishing isolation in hospitals, adapting facilities for triaging, procuring protective equipment, supplying drugs and medical equipment, developing treatment guidelines, and training healthcare personnel. Also supported preparedness for future outbreaks, risk communication, community engagement, leadership and coordination, and supply/cold chain management for vaccine distribution."
+                        },
+                        {
+                            "name": "Component 2. Implementation Management and Monitoring and Evaluation",
+                            "original_allocation": "US$1.49 million",
+                            "actual_expenditure": "US$1.5 million",
+                            "description": "Supported administration and monitoring and evaluation activities to ensure smooth project implementation, including staffing and establishment of the Project Management Unit at the Federal Ministry of Health, hiring of a Third-Party Monitoring agent and auditor, strengthening monitoring and reporting of adverse occurrences, citizen engagement, implementation of the Environmental and Social Commitment Plan, project coordination and supervision, and independent assessment of Sudan's COVID-19 response."
+                        },
+                        {
+                            "name": "Component 3. Contingent Emergency Response",
+                            "original_allocation": "US$0 million",
+                            "actual_expenditure": "US$0 million",
+                            "description": "Zero-cost component planned to enable the government to request the World Bank to re-allocate project funds in the event of an eligible crisis."
+                        },
+                        {
+                            "name": "Subcomponent 1.3: Vaccine Procurement and Deployment",
+                            "original_allocation": "US$0 million",
+                            "actual_expenditure": "US$8.71 million",
+                            "description": "Financed the purchase and deployment of COVID-19 vaccines meeting World Bank criteria, strengthening health systems for vaccine deployment, supporting vaccination planning, immunization system strengthening, and service delivery capacity building. Aimed to help vaccinate 25 percent of the population, with support for direct purchases, planning, accountability, and community engagement."
+                        },
+                        {
+                            "name": "Subcomponent 1.4: Solarization of Health and Vaccine Storage Facilities in Sudan",
+                            "original_allocation": "US$0.9 million",
+                            "actual_expenditure": "US$0 million",
+                            "description": "Sought to solarize health and vaccine storage facilities in Sudan by providing solar photovoltaic electricity to selected cold storage and health facilities to maintain vaccine temperatures. The ESMAP grant was intended to fund solar battery-backup systems, wiring reconfiguration, and technician training."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "To prevent, detect and respond to the threat posed by COVID-19 and strengthen national systems for public health preparedness in Sudan.",
+                                "references": [
+                                    "e855d47e-9d65-4bbc-a78b-db40885147ed"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Strengthen case detection and confirmation and conduct contact tracing; improve clinical care capacity; raise public awareness and promote community engagement; and bolster coordination, planning, logistical support, and reporting.",
+                                "references": [
+                                    "613fc5e0-4af7-4c39-8e2d-85611249f1e4"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "Component 1. Emergency COVID-19 Response",
+                                "references": [
+                                    "189146ec-f96f-472a-84d6-03e16770c12b"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$20.5 million",
+                                "references": [
+                                    "189146ec-f96f-472a-84d6-03e16770c12b"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$20.85 million",
+                                "references": [
+                                    "189146ec-f96f-472a-84d6-03e16770c12b"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component sought to prevent and limit the spread of COVID-19 in Sudan by providing immediate support to enhance case detection, testing, management, recording, and reporting, as well as strengthening contact tracing and risk assessments. It financed procurement of medical and non-medical supplies, medicines, and equipment aligned with WHO's list of disease commodities. Subcomponents included case detection, confirmation and contact tracing; health system strengthening; vaccine procurement and deployment; and solarization of health and vaccine storage facilities.",
+                                "references": [
+                                    "189146ec-f96f-472a-84d6-03e16770c12b",
+                                    "549ec9f2-e697-457f-81c3-536d81273b01",
+                                    "f6fc290f-8f1b-4e9a-80a5-0e8c0401e189",
+                                    "2c61c106-77d1-4965-8631-f1541c5e9392",
+                                    "5807ff21-32b5-4ccc-aee7-e60f87a4ec99",
+                                    "6464fca1-7ab9-4388-beab-862e5901030c"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Sub-Component 1.1: Case Detection, Confirmation and Contact Tracing",
+                                "references": [
+                                    "549ec9f2-e697-457f-81c3-536d81273b01"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$6.5 million",
+                                "references": [
+                                    "549ec9f2-e697-457f-81c3-536d81273b01"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$4.05 million",
+                                "references": [
+                                    "549ec9f2-e697-457f-81c3-536d81273b01"
+                                ]
+                            },
+                            "description": {
+                                "value": "Supported strengthening of disease surveillance systems, public health laboratories, and epidemiological capacity for early detection and confirmation of cases, active contact tracing, epidemiological investigation, risk assessments, and timely data for decision-making. Activities included training rapid response and contact tracing teams, laboratory staff, and procurement and maintenance of diagnostic equipment and supplies.",
+                                "references": [
+                                    "549ec9f2-e697-457f-81c3-536d81273b01",
+                                    "f7615fef-e00e-4622-9922-035b994ab2f9"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Sub-Component 1.2: Health System Strengthening",
+                                "references": [
+                                    "f6fc290f-8f1b-4e9a-80a5-0e8c0401e189"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$14.0 million",
+                                "references": [
+                                    "f6fc290f-8f1b-4e9a-80a5-0e8c0401e189"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$8.09 million",
+                                "references": [
+                                    "f6fc290f-8f1b-4e9a-80a5-0e8c0401e189"
+                                ]
+                            },
+                            "description": {
+                                "value": "Supported strengthening Sudan's health system for COVID-19 care by enhancing clinical capacity, implementing IPC measures, establishing isolation in hospitals, adapting facilities for triaging, procuring protective equipment, supplying drugs and medical equipment, developing treatment guidelines, and training healthcare personnel. Also supported preparedness for future outbreaks, risk communication, community engagement, leadership and coordination, and supply/cold chain management for vaccine distribution.",
+                                "references": [
+                                    "f6fc290f-8f1b-4e9a-80a5-0e8c0401e189"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Component 2. Implementation Management and Monitoring and Evaluation",
+                                "references": [
+                                    "7258c356-9c20-4730-b6f6-c96e89c6a511"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$1.49 million",
+                                "references": [
+                                    "7258c356-9c20-4730-b6f6-c96e89c6a511"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$1.5 million",
+                                "references": [
+                                    "7258c356-9c20-4730-b6f6-c96e89c6a511"
+                                ]
+                            },
+                            "description": {
+                                "value": "Supported administration and monitoring and evaluation activities to ensure smooth project implementation, including staffing and establishment of the Project Management Unit at the Federal Ministry of Health, hiring of a Third-Party Monitoring agent and auditor, strengthening monitoring and reporting of adverse occurrences, citizen engagement, implementation of the Environmental and Social Commitment Plan, project coordination and supervision, and independent assessment of Sudan's COVID-19 response.",
+                                "references": [
+                                    "7258c356-9c20-4730-b6f6-c96e89c6a511"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Component 3. Contingent Emergency Response",
+                                "references": [
+                                    "bba691b7-7cb2-4413-8e93-c3585d10fc10"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$0 million",
+                                "references": [
+                                    "bba691b7-7cb2-4413-8e93-c3585d10fc10"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$0 million",
+                                "references": [
+                                    "bba691b7-7cb2-4413-8e93-c3585d10fc10"
+                                ]
+                            },
+                            "description": {
+                                "value": "Zero-cost component planned to enable the government to request the World Bank to re-allocate project funds in the event of an eligible crisis.",
+                                "references": [
+                                    "bba691b7-7cb2-4413-8e93-c3585d10fc10"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Subcomponent 1.3: Vaccine Procurement and Deployment",
+                                "references": [
+                                    "2c61c106-77d1-4965-8631-f1541c5e9392"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$0 million",
+                                "references": [
+                                    "2c61c106-77d1-4965-8631-f1541c5e9392"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$8.71 million",
+                                "references": [
+                                    "2c61c106-77d1-4965-8631-f1541c5e9392"
+                                ]
+                            },
+                            "description": {
+                                "value": "Financed the purchase and deployment of COVID-19 vaccines meeting World Bank criteria, strengthening health systems for vaccine deployment, supporting vaccination planning, immunization system strengthening, and service delivery capacity building. Aimed to help vaccinate 25 percent of the population, with support for direct purchases, planning, accountability, and community engagement.",
+                                "references": [
+                                    "2c61c106-77d1-4965-8631-f1541c5e9392",
+                                    "5d13d1f2-509f-469f-881e-bf815b5083b6",
+                                    "a68b1ae1-69c7-4d4f-a759-b2c74b3cd0ca",
+                                    "5e77db88-9619-451d-9f0d-4e9d9de968ac"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Subcomponent 1.4: Solarization of Health and Vaccine Storage Facilities in Sudan",
+                                "references": [
+                                    "5807ff21-32b5-4ccc-aee7-e60f87a4ec99"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "US$0.9 million",
+                                "references": [
+                                    "5807ff21-32b5-4ccc-aee7-e60f87a4ec99"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "US$0 million",
+                                "references": [
+                                    "5807ff21-32b5-4ccc-aee7-e60f87a4ec99"
+                                ]
+                            },
+                            "description": {
+                                "value": "Sought to solarize health and vaccine storage facilities in Sudan by providing solar photovoltaic electricity to selected cold storage and health facilities to maintain vaccine temperatures. The ESMAP grant was intended to fund solar battery-backup systems, wiring reconfiguration, and technician training.",
+                                "references": [
+                                    "5807ff21-32b5-4ccc-aee7-e60f87a4ec99",
+                                    "6464fca1-7ab9-4388-beab-862e5901030c"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 17615,
+                    "credit_usage": 24.4,
+                    "job_id": "t8sybyu0zv841hsta3oqyf9ub",
+                    "version": "extract-20250930"
+                }
+            }
+        },
+        {
+            "project_id": "P174000",
+            "data": {
+                "extraction": {
+                    "objectives": [
+                        {
+                            "objective": "Support (i) strengthening environmental sustainability and resilience; and (ii) expanding access to resilient urban infrastructure and social housing."
+                        },
+                        {
+                            "objective": "Strengthening environmental sustainability and resilience."
+                        },
+                        {
+                            "objective": "Expanding access to resilient urban infrastructure and social housing."
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": "Strengthening environmental sustainability and resilience in agriculture, forestry and local government development",
+                            "original_allocation": "750,000,000.00",
+                            "actual_expenditure": "750,000,000.00",
+                            "description": "This component focused on strengthening environmental sustainability and resilience in agriculture, forestry, and local government development. It included prior actions such as forest conservation provisions in agricultural support programs, guidelines for greenhouse gas emissions trading, air quality monitoring, climate adaptation frameworks for municipalities, and legal protection for urban forests."
+                        },
+                        {
+                            "name": "Expanding access to resilient urban infrastructure and social housing",
+                            "original_allocation": "750,000,000.00",
+                            "actual_expenditure": "750,000,000.00",
+                            "description": "This component aimed to expand access to resilient urban infrastructure and social housing. It included prior actions such as amendments to the Social Housing Program to target poor and vulnerable households, operational rules for the Urban Upgrading Program to support mid-sized cities, and new rules for the National Reconstruction Program to improve resilience of housing, education, and health facilities damaged by earthquakes."
+                        }
+                    ]
+                },
+                "extraction_metadata": {
+                    "objectives": [
+                        {
+                            "objective": {
+                                "value": "Support (i) strengthening environmental sustainability and resilience; and (ii) expanding access to resilient urban infrastructure and social housing.",
+                                "references": [
+                                    "8ee23eaa-c0a4-40c5-b2f3-83b1a8b09e70"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Strengthening environmental sustainability and resilience.",
+                                "references": [
+                                    "83a93ce1-ddff-4b5c-b850-26ffac0bc478"
+                                ]
+                            }
+                        },
+                        {
+                            "objective": {
+                                "value": "Expanding access to resilient urban infrastructure and social housing.",
+                                "references": [
+                                    "8bf6b944-5482-4a88-a1a5-95f80e858e46"
+                                ]
+                            }
+                        }
+                    ],
+                    "components": [
+                        {
+                            "name": {
+                                "value": "Strengthening environmental sustainability and resilience in agriculture, forestry and local government development",
+                                "references": [
+                                    "aeb84af2-7911-4244-880c-2eb3d414530f"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "750,000,000.00",
+                                "references": [
+                                    "0-n"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "750,000,000.00",
+                                "references": [
+                                    "0-t"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component focused on strengthening environmental sustainability and resilience in agriculture, forestry, and local government development. It included prior actions such as forest conservation provisions in agricultural support programs, guidelines for greenhouse gas emissions trading, air quality monitoring, climate adaptation frameworks for municipalities, and legal protection for urban forests.",
+                                "references": [
+                                    "aeb84af2-7911-4244-880c-2eb3d414530f",
+                                    "1ab60b31-9799-4e93-b041-6467725f7fc8",
+                                    "d3bf77ec-c08a-4399-8cb2-44f2611aa429",
+                                    "46ab007d-f066-414d-8a65-e6f7804c9d00",
+                                    "08f4833f-5167-4f62-92ef-a334dd54a5fe",
+                                    "9f562786-3bf3-4d51-8ad4-3cfe1ccd3cb3",
+                                    "29d466fb-d8ab-4d4f-ac5d-7294aeb3964d"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Expanding access to resilient urban infrastructure and social housing",
+                                "references": [
+                                    "cd0eb3e5-f426-4d81-ae67-ec07d0cb0b7f"
+                                ]
+                            },
+                            "original_allocation": {
+                                "value": "750,000,000.00",
+                                "references": [
+                                    "0-n"
+                                ]
+                            },
+                            "actual_expenditure": {
+                                "value": "750,000,000.00",
+                                "references": [
+                                    "0-t"
+                                ]
+                            },
+                            "description": {
+                                "value": "This component aimed to expand access to resilient urban infrastructure and social housing. It included prior actions such as amendments to the Social Housing Program to target poor and vulnerable households, operational rules for the Urban Upgrading Program to support mid-sized cities, and new rules for the National Reconstruction Program to improve resilience of housing, education, and health facilities damaged by earthquakes.",
+                                "references": [
+                                    "cd0eb3e5-f426-4d81-ae67-ec07d0cb0b7f",
+                                    "b7bb89f2-2774-46d1-b374-ec64127f41f1",
+                                    "c134973f-7851-4581-aae3-9f14054dd8a2",
+                                    "461d4098-f015-4d85-9d59-f2f64805163e"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "metadata": {
+                    "filename": "markdown",
+                    "org_id": null,
+                    "duration_ms": 7833,
+                    "credit_usage": 13.0,
+                    "job_id": "uzh24znljf1vfb2k5e4jg5cgv",
+                    "version": "extract-20250930"
+                }
+            }
+        }
+    ]
+}
