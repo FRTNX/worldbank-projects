@@ -1,16 +1,9 @@
+import os
 import json
 import requests
 from io import BytesIO
 
-import os
-import json
-import requests
-# import spacy
-# from spacy_layout import spaCyLayout
 from argparse import ArgumentParser
-
-# nlp = spacy.blank("en")
-# layout = spaCyLayout(nlp)
 
 parser = ArgumentParser(description='Fetch project data and documents from the World Bank')
 parser.add_argument('-d', '--document-dir', required=False,
@@ -135,7 +128,3 @@ if __name__ == '__main__':
         with open('landing_ai_components.json', 'w') as f:
             data = { 'data': dataset }
             f.write(json.dumps(data, indent=4))
-
-
-
-
